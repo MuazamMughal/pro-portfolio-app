@@ -30,7 +30,7 @@ const info = [
   {
     icons: <FaEnvelope />,
     title: "Email Directly",
-    description: <a className='underline' href='mailto:muazammughal11111@gmail.com'>"Muazammughal11111@gmail.com"</a>
+    description: <a className='underline' href='mailto:muazammughal11111@gmail.com'>&quot;Muazammughal11111@gmail.com&quot;</a>
   },
   {
     icons: <FaMapMarkedAlt />,
@@ -64,7 +64,7 @@ const page = () => {
 
           }} 
           className='flex flex-col gap-4 p-8 bg-slate-300 dark:text-white text-black/80  dark:bg-[#27272c] rounded-xl'>
-            <h3 className=' text-2xl font-bold text-green-500'>Let's Conect</h3>
+            <h3 className=' text-2xl font-bold text-green-500'>Let&apos;s Conect</h3>
           <p className='text-lg'>
             Get in Connect regarding any query for further
           </p>

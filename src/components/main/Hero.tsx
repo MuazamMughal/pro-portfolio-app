@@ -75,7 +75,7 @@ const Hero = () => {
           </p>
           <p className='pl-'>  Express Feelings in Code.</p>
           <div className='flex flex-col items-center lg:md:flex-row'>
-            <h1 className=" text-3xl mt-3 font-medium text-slate-800 dark:text-gray-200">Coding is My '' </h1>
+            <h1 className=" text-3xl mt-3 font-medium text-slate-800 dark:text-gray-200">Coding is My &quot; </h1>
             <h1 className='text-3xl mt-3 text-green-500 tracking-wide font-medium'>
               <Typewriter
 
