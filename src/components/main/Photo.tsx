@@ -16,11 +16,11 @@ const Photo = () => {
         }} className='w-[220px] h-[200px] md:w-[450px] md:h-[400px] lg:xl:w-[450px] md:lg:xl:h-[500px] '>
              
                 <Image
-                src="/asset/cover.png"
+                src="/asset/MuazamFinal2.png"
                 alt=''
                 fill
                 priority
-                className='object-contain transition  opacity-95 rounded-b-full mix-blend-lighten'/>
+                className='object-contain transition  opacity-90 rounded-b-full mix-blend-lighten'/>
            
 
 

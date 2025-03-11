@@ -1,6 +1,6 @@
 import Link from 'next/link'
 import React from 'react'
-import Muazam_Avatar from "@/../public/Muazam_Avatar-removebg-preview.png"
+import Muazam_Avatar from "@/../public/NewAvatar.png"
 import Image from 'next/image'
 import Nav from './Nav'
 import { Button } from '../ui/button'

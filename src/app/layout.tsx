@@ -19,7 +19,7 @@ const  JetBrainsMono = JetBrains_Mono({
 export const metadata: Metadata = {
   title: 'Muazam Mughal',
   description: 'Muazam Mughal professional portfolio web app',
-   icons: "/Muazam_Avatar-removebg-preview.png"
+   icons: "/NewAvatar.png"
 }
 export default function RootLayout({
   children,
