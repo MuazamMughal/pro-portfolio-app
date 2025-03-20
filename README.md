@@ -1,36 +1,68 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Muazam Mughal - Professional Portfolio 🌟
 
-## Getting Started
+Welcome to my **Professional Portfolio**, a showcase of my skills, projects, and experiences as a developer. This portfolio is designed to reflect my passion for creating clean, modern, and user-friendly web applications. Whether you're a potential employer, collaborator, or just visiting, I hope this gives you a glimpse into my work and expertise.
 
-First, run the development server:
+## 🌐 Live Website
+[muazammughal.me](https://muazammughal.me)
 
+## ✨ Features
+- **About Me**: Learn about my background, skills, and what drives me as a developer.
+- **Projects**: Explore a curated list of my projects with descriptions, technologies used, and live demos.
+- **Skills**: A detailed breakdown of my technical skills and tools I work with.
+- **Experience**: Highlights of my professional journey, including roles, responsibilities, and achievements.
+- **Contact**: Easy-to-use contact form to get in touch with me directly.
+- **Responsive Design**: Fully optimized for desktop, tablet, and mobile devices.
+- **Dark/Light Mode**: Toggle between themes for a personalized viewing experience.
+- **Smooth Animations**: Subtle animations and transitions for a polished user experience.
+
+## 🛠️ Technologies Used
+- **Frontend**: React.js, Tailwind CSS
+- **Routing**: React Router
+- **Animations**: Framer Motion, Mouse Parallax
+- **Mailing** : Resend 
+- **Icons**: React Icons
+- **Components** : ShadcnUI
+- **Deployment**: Vercel
+- **Form Handling**: Formik and Yup for validation
+- **State Management**: React Context API (if applicable)
+
+## 🚀 Getting Started
+To run this project locally, follow these steps:
+
+### Clone the repository:
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+git clone https://github.com/your-username/muazam-mughal-portfolio.git
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Navigate to the project directory:
+```bash
+cd muazam-mughal-portfolio
+```
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Install dependencies:
+```bash
+npm install
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+### Start the development server:
+```bash
+npm start
+```
 
-## Learn More
+Open your browser and visit **`http://localhost:3000`** to see the portfolio in action.
 
-To learn more about Next.js, take a look at the following resources:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+## 🤝 Contributing
+This portfolio is a personal project, but if you have suggestions or improvements, feel free to **open an issue or submit a pull request**. Contributions are always welcome!
 
-## Deploy on Vercel
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## 📧 Contact
+Have questions or want to collaborate? Feel free to reach out:
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+- **Email**: muazammughal11111@gmail.com
+- **GitHub**: [MuazamMughal](https://github.com/your-username)
+- **Portfolio**: [muazammughal.me](https://muazammughal.me)
+
+Thank you for visiting my portfolio! Let's build something amazing together. 🚀
+
