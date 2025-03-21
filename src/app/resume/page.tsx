@@ -68,15 +68,16 @@ const education =
       duration: "2023 - Present"
     },
     {
-      institutions: "PIAIC",
-      degree: "Full-Stack Web Development",
-      duration: "late 2022 - 2023 "
-    },
-    {
       institutions: "Virtual University of Pakistan",
       degree: "BS Software Engineering",
-      duration: "late 2019 - 2024"
-    }, {
+      duration: "late 2019 - late 2024"
+    },
+    {
+      institutions: "PIAIC",
+      degree: "Full-Stack Web Development",
+      duration: "late 2022 - 2024 "
+    },
+     {
       institutions: "Govt. Postgraduation College Sahiwal / KIPS",
       degree: "Intermediate (Pre-Engineering)",
       duration: "2017 - 2018",
@@ -98,12 +99,12 @@ const Experience =
     {
       company: "Local OutSourced Work",
       desigation: "Full-Stack Web Developer",
-      duration: "2-10-2024 - Present"
+      duration: "Aug-2024 - Present"
     },
     {
-      company: "",
-      desigation: " ",
-      duration: ""
+      company: "DevcoSol",
+      desigation: "Full-Stack developer",
+      duration: "jan-2024 - May-2024"
     },
     {
       company: "",
