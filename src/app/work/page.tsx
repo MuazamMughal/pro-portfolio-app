@@ -20,20 +20,34 @@ import Image from 'next/image'
 
 
 const projects = [
-  {
-    num: "01",
+  
+    {
+      num: "01",
+     category: "Full-Stack-Development",
+      title: "isStartup",
+     description: "A Next.js 15 and Sanity-powered platform for entrepreneurs to submit, browse, and showcase startup ideas in virtual pitch competitions. ",
+     stack: [{ name: "Next.js 15" }, { name: "React 19" },{ name: "Sanity" }, { name: "NextAuth" },{ name: "Typescript" }, { name: "TailwindCSS" },{ name: "Shadcn UI" },],
+     image: "/asset/isSUimg.PNG",
+      live: "https://is-startup-app.vercel.app/",
+      github: "https://github.com/MuazamMughal/isStartup-app"
+ 
+ 
+    },
+    {
+     num: "02",
     category: "Full-Stack-Development",
-    title: "E-Commerce Marketplace (Dine Market)",
-    description: "Full-Stack Web-app having elegent UI along with Full-fledged functionalities, Sanity as CMS",
-    stack: [{ name: "Next.js" }, { name: "Tailwind CSS" }, { name: "React" },{ name: "Sanity" }, { name: "Typescript" }, { name: "ReduxTK" }],
-    image: "/asset/dmart.png",
-    live: "",
-    github: "https://github.com/MuazamMughal/hackathon-app"
-
-
-  },
+     title: "AuraCart",
+    description: "A modern e-commerce platform built with Next.js, Clerk, Sanity, Stripe, and PostgreSQL secure authentication, real-time data fetching, and smooth checkout processing.",
+    stack: [{ name: "Next.js 15" }, { name: "React 19" },{ name: "Sanity" }, { name: "Stripe" },{ name: "Clerk " },{ name: "Typescript" }, { name: "TailwindCSS" },],
+     image: "/asset/ACimg.PNG",
+     live: "https://aura-cart-app.vercel.app/",
+     github: "https://github.com/MuazamMughal/AuraCart-app"
+ 
+ 
+   },
+  
   {
-    num: "02",
+    num: "03",
     category: "Full-Stack-Development",
     title: "Photo Gallery using Cloudinary",
     description: "This is full-Enhanced Photo Gallery in Next.js along with Cloudinary backend",
@@ -45,7 +59,19 @@ const projects = [
 
   },
   {
-    num: "03",
+    num: "04",
+    category: "Full-Stack-Development",
+    title: "E-Commerce Marketplace (Dine Market)",
+    description: "Full-Stack Web-app having elegent UI along with Full-fledged functionalities, Sanity as CMS",
+    stack: [{ name: "Next.js" }, { name: "Tailwind CSS" }, { name: "React" },{ name: "Sanity" }, { name: "Typescript" }, { name: "ReduxTK" }],
+    image: "/asset/dmart.png",
+    live: "",
+    github: "https://github.com/MuazamMughal/hackathon-app"
+
+
+  },
+  {
+    num: "05",
     category: "Full-Stack-Development",
     title: "Multilangual News Website (NewsLand)",
     description: "Multilangual News Website in both English and Urdu. Using Next.js ,Strapi as Backend",
@@ -56,18 +82,7 @@ const projects = [
 
 
   },
-  // {
-  //   num: "04",
-  //   category: "Frontend",
-  //   title: "Project 1",
-  //   description: "this is the discription of the project number one",
-  //   stack: [{ name: "HTML 5" }, { name: "CSS" }, { name: "Typescript" }, { name: "React" },],
-  //   image: "",
-  //   live: "",
-  //   github: ""
-
-
-  // },
+  
 ]
 const page = () => {
   return(
