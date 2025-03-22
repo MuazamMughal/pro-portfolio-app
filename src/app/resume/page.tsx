@@ -15,7 +15,15 @@ import {
 import {
   SiNextdotjs,
   SiTailwindcss, SiRedux, SiOpenai, SiStrapi, SiPostman, SiTypescript,
-  SiFastapi ,SiGooglegemini,SiStreamlit,SiMicrosoftazure
+  SiFastapi ,SiGooglegemini,SiStreamlit,SiMicrosoftazure,
+  SiSanity,
+  SiStripe,
+  SiShadcnui,
+  SiClerk,
+  SiPostgresql,
+  SiVercel,
+  SiPrisma,
+  SiDrizzle
 } from "react-icons/si"
 import { ScrollArea } from "@/components/ui/scroll-area"
 import { PiBirdBold } from "react-icons/pi";
@@ -119,26 +127,25 @@ const skills = {
   title: "My Skills",
   Description: "this is the description for the my skill segment",
   skillList: [
+    
     {
-      icons: <FaHtml5 />,
-      name: "html 5"
-    }, {
-      icons: <FaCss3 />,
-      name: "CSS"
-    },
-    {
-      icons: <SiTypescript />,
-      name: "JavaScript"
-    }, {
+      icons: <SiNextdotjs/>,
+      name: "Next.js 15"
+    },{
       icons: <FaReact />,
       name: "React"
-    }, {
-      icons: <SiNextdotjs />,
-      name: "Next.js"
-    }, {
+    },{
+      icons: <SiTypescript />,
+      name: "TypeScript"
+    } 
+     , {
       icons: <SiTailwindcss />,
       name: "TailwindCSS"
-    }, {
+    },   {
+      icons: <SiSanity/>,
+      name: "Sanity CMS"
+    },
+{
       icons: <FaFigma />,
       name: "Figma"
     }, {
@@ -163,6 +170,43 @@ const skills = {
       icons: <FaGithub />,
       name: "Git % Github"
     },
+    {
+      icons: <FaHtml5 />,
+      name: "html 5"
+    }, {
+      icons: <FaCss3 />,
+      name: "CSS"
+    }, 
+   
+    {
+      icons: <SiStripe/>,
+      name: "Stripe Paymente Gatway"
+    },
+    {
+      icons: <SiShadcnui/>,
+      name: "Shadcn UI"
+    },
+    {
+      icons: <SiClerk/>,
+      name: "Clerk Authentication managment system"
+    },
+    {
+      icons: <SiPostgresql/>,
+      name: "Postgress"
+    },
+    {
+      icons: <SiPrisma/>,
+      name: "Prisma ORM"
+    },
+    {
+      icons: <SiDrizzle/>,
+      name: "Drizzle ORM"
+    },
+    {
+      icons: <SiVercel/>,
+      name: "Vercel"
+    },
+    
   ]
 
 }
