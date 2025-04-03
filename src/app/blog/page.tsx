@@ -32,7 +32,7 @@ export default async function BlogPage() {
         <section className="w-full lg:w-1/4 lg:border-l-2 lg:border-green-200 lg:pl-6">
           <div className="sticky top-4">
             <h3 className="text-2xl text-green-600 font-bold mb-4">
-            My Journeys
+            My Journeys 
             </h3>
             {categories.length > 0 ? (
               <ul className="space-y-4">
