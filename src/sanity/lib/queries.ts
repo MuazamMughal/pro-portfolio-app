@@ -1,45 +1,6 @@
 
 import { defineQuery } from 'next-sanity' 
 import { Post, Category, PostPreview } from '@/types/sanity'
-
-// Posts query
-// export const postsQuery = defineQuery(`
-//   *[_type == "post"] | order(publishedAt desc) {
-//     _id,
-//     _createdAt,
-//     _updatedAt,
-//     title,
-//     "slug": slug.current,
-//     publishedAt,
-//     "mainImage": mainImage.asset->url,
-//     "alt": mainImage.alt,
-//     "author": author->{
-//       _id,
-//       name,
-//       "slug": slug.current,
-//       "image": image.asset->url
-//     },
-//     "categories": categories[]->{
-//       _id,
-//       title,
-//       "slug": slug.current,
-//       description,
-//       color
-//     },
-//     body[]{
-//       ...,
-//       _type == "image" => {
-//         "url": asset->url,
-//         "alt": alt
-//       },
-//       _type == "code" => {
-//         code,
-//         language
-//       }
-//     },
-//     tags
-//   }
-// `)
 export const postsQuery = defineQuery(`
     *[_type == "post"] | order(publishedAt desc) {
       _id,
