@@ -7,6 +7,7 @@ import { format } from 'date-fns'
 import type { Post } from '@/types/sanity'
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter'
 import { docco } from 'react-syntax-highlighter/dist/esm/styles/hljs'
+import Link from 'next/link'
 
 interface PostProps {
   post: Post
@@ -61,6 +62,9 @@ export function Post({ post }: PostProps) {
         {/* Categories - Right Side */}
         {post.categories.length > 0 && (
           <div className="flex gap-2">
+            <Link
+              href={`/category/${post.categories[0].slug}`}
+              >
             {post.categories.map((category) => (
               <span
                 key={category._id}
@@ -70,6 +74,7 @@ export function Post({ post }: PostProps) {
                 {category.title}
               </span>
             ))}
+            </Link>
           </div>
         )}
       </div>

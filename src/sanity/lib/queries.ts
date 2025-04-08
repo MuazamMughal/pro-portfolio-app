@@ -87,7 +87,7 @@ export const blogPageQuery = {
 
 
 
-export async function getPost(slug: string): Promise<Post> {
+export async function getPost(slug: string) {
   return client.fetch(groq`
     *[_type == "post" && slug.current == $slug][0] {
       _id,
@@ -152,10 +152,7 @@ export async function getPost(slug: string): Promise<Post> {
 
 
 
-export async function getCategoryWithPosts(slug: string): Promise<{
-  category: Category
-  posts: PostPreview[]
-}> {
+export async function getCategoryWithPosts(slug: string) {
   return client.fetch(groq`
     {
       "category": *[_type == "category" && slug.current == $slug][0] {
