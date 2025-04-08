@@ -1,7 +1,13 @@
 
-import { defineQuery } from 'next-sanity' 
+import { groq } from 'next-sanity'
 import { Post, Category, PostPreview } from '@/types/sanity'
-export const postsQuery = defineQuery(`
+import { client } from './client'
+
+
+
+
+export const revalidate = 2
+export const postsQuery = (groq`
     *[_type == "post"] | order(publishedAt desc) {
       _id,
       _createdAt,
@@ -53,7 +59,7 @@ export const postsQuery = defineQuery(`
   `)
 
 // Categories query
-export const categoriesQuery = defineQuery(`
+export const categoriesQuery = (groq`
   *[_type == "category"] | order(title asc) {
     _id,
     title,
@@ -79,8 +85,6 @@ export const blogPageQuery = {
   },
 }
 
-
-import { groq } from 'next-sanity'
 
 
 export async function getPost(slug: string): Promise<Post> {
@@ -147,8 +151,6 @@ export async function getPost(slug: string): Promise<Post> {
 
 
 
-
-import { client } from './client'
 
 export async function getCategoryWithPosts(slug: string): Promise<{
   category: Category

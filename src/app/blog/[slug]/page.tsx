@@ -6,6 +6,7 @@ interface PostPageProps {
     slug: string
   }
 }
+export const revalidate = 60 // revalidate every minute
 
 export default async function PostPage({ params }: PostPageProps) {
   const post = await getPost(params.slug)

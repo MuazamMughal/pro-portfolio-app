@@ -10,6 +10,7 @@ import ThemeSwitch from "@/components/theme-switch";
 
 
 
+
 const inter = Inter({ subsets: ["latin"] });
 const  JetBrainsMono = JetBrains_Mono({
   subsets: ["latin"],
@@ -37,7 +38,7 @@ export default function RootLayout({
         {children}
        
         </PageTransition>
-        
+       
         
         </body>
     </html>

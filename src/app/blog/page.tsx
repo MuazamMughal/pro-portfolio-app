@@ -2,9 +2,9 @@
 import { blogPageQuery } from '@/sanity/lib/queries'
 import BlogCard from '@/components/main/BlogCard'
 import { Post } from '@/types/sanity'
-
+export const revalidate = 60 // Revalidate every 60 seconds
 export default async function BlogPage() {
-  const { posts, categories } = await blogPageQuery.fetch()
+  const { posts, categories } = await blogPageQuery.fetch() as { posts: Post[]; categories: { _id: string; slug: string; title: string; description?: string }[] }
 
   return (
     
