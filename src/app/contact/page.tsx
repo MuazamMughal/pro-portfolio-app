@@ -20,6 +20,7 @@ import { sendEmail } from '@/actions/sendEmail'
 import toast from 'react-hot-toast'
 
 import Link from 'next/link'
+import Head from 'next/head'
 
 const info = [
   {
@@ -42,6 +43,31 @@ const info = [
 ]
 const page = () => {
   return (
+    <>
+    <Head>
+  <title>Contact Us | Muazam Mughal</title>
+  <meta name="description" content="Reach out for inquiries, support, or collaborations. Email, phone, and location provided." />
+  <script type="application/ld+json">
+    {JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "ContactPage",
+      "name": "Muazam Mughal",
+      "headline": "Contact Us",
+      "description": "Contact page for inquiries",
+      "url": "https://muazammughal.me/contact",
+      "telephone": "+923034510773",
+      "email": "muazammughal11111@gmail.com",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "W2 Global",
+        "addressLocality": "City",
+        "addressRegion": "State",
+        "postalCode": "00000",
+        "addressCountry": "PK"
+      }
+    })}
+  </script>
+</Head>
     <motion.section
       initial={{ opacity: 0 }}
       animate={{
@@ -112,7 +138,7 @@ const page = () => {
       </div>
 
     </motion.section>
-    
+    </>
   )
 
 

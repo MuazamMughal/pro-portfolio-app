@@ -2,13 +2,39 @@
 import { blogPageQuery } from '@/sanity/lib/queries'
 import BlogCard from '@/components/main/BlogCard'
 import { Post } from '@/types/sanity'
+import Head from 'next/head'
 export const revalidate = 60 // Revalidate every 60 seconds
 export default async function BlogPage() {
   const { posts, categories } = await blogPageQuery.fetch() as { posts: Post[]; categories: { _id: string; slug: string; title: string; description?: string }[] }
 
   return (
     
+  <>
   
+<Head>
+  <title>Blog | Latest Insights on [DSA with paython | Agentic AI | Learning]</title>
+  <meta 
+    name="description" 
+    content="Explore expert articles on [DSA with paython | Agentic AI | Learning]. Learn about [topics] and stay updated with the latest trends." 
+  />
+  <script type="application/ld+json">
+    {JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "Blog",
+      "headline": "Blog | [Your Brand]",
+      "description": "Latest insights on [your niche].",
+      "url": "https://muazammughal.me/blog",
+      "publisher": {
+        "@type": "Organization",
+        "name": "Muazam MUghal",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://muazammughal.com/NewAvatar.png"
+        }
+      }
+    })}
+  </script>
+</Head>
     <div className="container mx-auto px-4 py-8 ">
       <h1 className="text-5xl font-bold text-center pb-8  tracking-wider text-green-500 mb-8">
         BLOG
@@ -61,5 +87,6 @@ export default async function BlogPage() {
         </section>
       </div>
     </div>
+    </>
   )
 }

@@ -17,6 +17,7 @@ import {
 import Link from 'next/link'
 import{Swiper,SwiperSlide} from "swiper/react"
 import Image from 'next/image'
+import Head from 'next/head'
 
 
 const projects = [
@@ -86,6 +87,15 @@ const projects = [
 ]
 const page = () => {
   return(
+<>
+{/* SEO META TAGS */}
+<Head>
+        <title>Projects | Muazam Mughal - Software Engineer Portfolio</title>
+        <meta name="description" content="Explore full-stack projects by Muazam Mughal including Next.js apps, e-commerce platforms, and more." />
+        <meta name="keywords" content="Muazam Mughal, Software Engineer, Full Stack Developer, Next.js, Portfolio, Projects" />
+        <meta name="robots" content="index, follow" />
+      </Head>
+    
   <motion.div initial={{ opacity: 0 }}
        animate={{ opacity: 1 }}
       className='min-h-[80vh] '>
@@ -104,7 +114,7 @@ return (
   
        
     </motion.div>
-   
+    </>
 )
 }
 
@@ -185,125 +195,3 @@ group-hover:scale-[1.0]
 
 
 
-
-
-
-// const page = () => {
-
-
-//   const [project, setProject] = useState(projects[0])
-// const handleSlideChange = (Swiper:any) =>{
-// const currentIndex = Swiper.activeIndex
-// setProject(projects[currentIndex])
-// }
-//   return (
-//     <motion.div initial={{ opacity: 0 }}
-//       animate={{ opacity: 1 }}
-//       className='min-h-[80vh] flex flex-col justify-center py-12 xl:px-0'>
-//       <div className='container mx-auto'>
-//         <div className='flex flex-col xl:lg:flex-row xl:gap-[30px]'>
-//           {/* now the text is started */}
-//           <div className='w-full xl:lg:w-[50%] xl:lg:h-[460px] flex flex-col
-//           xl:lg:justify-between order-2 md: xl:lg:order-none xl:lg:pl-12'>
-//             <div>
-//               {/* outline numbers */}
-//               <div className=' text-8xl leading-none font-extrabold text-green-300 '>
-//                 {project.num}
-
-//               </div>
-
-//               {/* for froject category */}
-//               <h2 className='text-[42px] font-bold leading-none text-white group-hover:text-green-500
-//               transition-all duration-500 capitalize'>
-//                 {project.category} 
-
-//               </h2>
-//               {/* projeect description */}
-//               <p className='text-white/60 text-lg pl- pt-4' >
-//                 {project.description}
-//               </p>
-//               {/* now tech stack */}
-
-//               <ul  className='flex  pt-4 gap-4'>
-//                 {project.stack.map((stk , index)=>{
-//                   return <li key={index}
-//                   className='text-xl font-bold bg-slate-900 py-2 px-4 rounded-lg text-green-500'>
-//                     {stk.name}
-//                   </li>
-//                 })}
-//               </ul>
-//               {/* Buttons */}
-
-//               <div className='pt-4  flex flex-row gap-4 items-center justify-start'>
-//               <Link href={project.live}>
-//                   <TooltipProvider delayDuration={100}>
-//                     <Tooltip>
-//                       <TooltipTrigger className='w-[50px] h-[50px] rounded-full 
-//                       bg-white/20 flex justify-center items-center group ' >
-//                         <BsGithub className='text-green-300 text-3xl group-hover:text-green-500'/>
-//                       </TooltipTrigger>
-//                       <TooltipContent> 
-//                         <p>Github Link</p>
-//                       </TooltipContent>
-//                     </Tooltip>
-
-//                   </TooltipProvider>
-//                 </Link>
-//                 <Link href={project.live}>
-//                   <TooltipProvider delayDuration={100}>
-//                     <Tooltip>
-//                       <TooltipTrigger className='w-[50px] h-[50px] rounded-full 
-//                       bg-white/20 flex justify-center items-center group ' >
-//                         <BsArrowUpRight className='text-green-300 text-3xl group-hover:text-green-500'/>
-//                       </TooltipTrigger>
-//                       <TooltipContent> 
-//                         <p>Live Project</p>
-//                       </TooltipContent>
-//                     </Tooltip>
-
-//                   </TooltipProvider>
-//                 </Link>
-//               </div>
-
-//             </div>
-
-//           </div>
-
-
-
-//           {/* from there we started working overr the Swiper */}
-//           <div className='w-full  lg:xl:w-[50%]'>
-//             <Swiper
-//             spaceBetween={30}
-//             slidesPerView={1}
-//            className='xl:lg:h-[520px] '
-//             onSlideChange={handleSlideChange}
-//             >
-              
-//               {projects.map((project ,index )=>{
-//                 return( 
-//                 <div  className='w-full text-black'>
-
-                
-//                  <SwiperSlide key={index} className='w-full' >
-//                   <div className='h-[460px] relative group  flex justify-center items-center
-//                   bg-white text-black'>
-//                     <Image src={project.image} alt={project.title} height={100} width={100}/>
-
-
-//                   </div>
-//                 </SwiperSlide> 
-//                 </div>
-//               )
-
-//               })}
-//             </Swiper>
-
-
-//           </div>
-//         </div>
-//       </div>
-//     </motion.div>
-//   )}
-
-//   export default page

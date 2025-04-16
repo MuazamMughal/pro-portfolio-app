@@ -1,5 +1,6 @@
 import { getCategoryWithPosts } from '@/sanity/lib/queries'
 import { CategoryPostCard } from '@/components/main/CategoryPostCard'
+import { PostPreview } from '@/types/sanity'
 
 interface CategoryPageProps {
   params: {
@@ -33,7 +34,7 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
       {/* Posts List */}
       <div className="space-y-8">
         {posts.length > 0 ? (
-          posts.map((post) => (
+          posts.map((post:PostPreview) => (
             <CategoryPostCard key={post._id} post={post} />
           ))
         ) : (

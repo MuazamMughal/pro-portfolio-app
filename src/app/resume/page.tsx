@@ -3,6 +3,7 @@ import { Description } from '@radix-ui/react-dialog'
 import { title } from 'process'
 import React from 'react'
 
+
 import {
   FaHtml5,
   FaCss3,
@@ -32,6 +33,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip"
 import { motion } from 'framer-motion'
 import { link } from 'fs'
+import Head from 'next/head'
 
 
 
@@ -255,6 +257,31 @@ const enthusiast = [
 
 const page = () => {
   return (
+<>
+<Head>
+        <title>Muazam Mughal – Full-Stack Developer Resume</title>
+        <meta
+          name="description"
+          content="Explore the resume of Muazam Mughal, a Full-Stack Developer skilled in Next.js, TypeScript, Sanity CMS, and modern web technologies."
+        />
+        <meta name="robots" content="index, follow" />
+        <meta property="og:title" content="Muazam Mughal – Full-Stack Developer Resume" />
+        <meta
+          property="og:description"
+          content="Explore the resume of Muazam Mughal, a Full-Stack Developer skilled in modern web technologies."
+        />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://muazammughal.me/resume" />
+        <meta property="og:image" content="https://muazammughal.me/NewAvatar.png" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Muazam Mughal – Full-Stack Developer Resume" />
+        <meta
+          name="twitter:description"
+          content="Explore Muazam Mughal's resume and projects. Skilled in Next.js, TypeScript, Sanity CMS."
+        />
+        <meta name="twitter:image" content="https://muazammughal.me/NewAvatar.png" />
+        <link rel="canonical" href="https://muazammughal.me/resume" />
+      </Head>
 
     <motion.div
       initial={{ opacity: 0 }}
@@ -269,7 +296,7 @@ const page = () => {
 
 
         <Tabs className=' flex  flex-col lg:xl:flex-row md:flex-row'
-          defaultValue="Learning Enthusiasm"
+          defaultValue="Skills"
         >
           <TabsList
             className=' flex  flex-col w-full max-w-[380px] mx-auto lg:xl:mx-0 gap-6'>
@@ -449,6 +476,7 @@ const page = () => {
 
       </div>
     </motion.div>
+    </>
   )
 }
 
