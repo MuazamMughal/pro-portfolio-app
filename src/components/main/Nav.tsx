@@ -1,58 +1,40 @@
 "use client"
-import React from 'react'
 import { usePathname } from 'next/navigation'
 import Link from 'next/link'
-import path from 'path'
-import { text } from 'stream/consumers'
+import { cn } from '@/lib/utils'
+
 interface link {
     name: string,
     path: string
 }
-const links = [
-    {
-        name: "Home",
-        path: "/"
-    }, 
-     {
-        name: "About Me",
-        path: "/aboutme"
-    },
-    {
-        name: "Blog",
-        path: "/blog"
-    },
-  
-    {
-        name: "Resume",
-        path: "/resume"
-    },
-    {
-        name: "Work",
-        path: "/work"
-    },
-    {
-        name: "Contact",
-        path: "/contact"
-    },
+const links: link[] = [
+    { name: "Home", path: "/" },
+    { name: "Resume", path: "/resume" },
+    { name: "Work", path: "/work" },
+    { name: "Contact", path: "/contact" },
 ]
+
 const Nav = () => {
     const pathname = usePathname()
-    console.log(pathname)
     return (
-        <nav className='flex gap-6'>
-            {links.map((link: link, index) => {
+        <nav className="flex items-center gap-8">
+            {links.map((link) => {
+                const active = link.path === pathname
                 return (
-                    <Link href={link.path}
-                        key={index}
-                        className={`${link.path == pathname &&
-                            " text-green-300 border-b-4 font-bold  border-green-800"}
-           font-medium  text-slate-900  dark:text-white rounded-md p-2 transition-all hover:bg-green-600`}>
+                    <Link
+                        key={link.path}
+                        href={link.path}
+                        className={cn(
+                            "relative py-1 text-sm font-medium transition-colors duration-300",
+                            active
+                                ? "text-green-400 after:absolute after:-bottom-1 after:left-0 after:h-px after:w-full after:bg-green-400"
+                                : "text-slate-300 hover:text-white"
+                        )}
+                    >
                         {link.name}
-
                     </Link>
                 )
             })}
-
         </nav>
     )
 }

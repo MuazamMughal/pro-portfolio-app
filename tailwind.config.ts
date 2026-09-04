@@ -26,6 +26,10 @@ const config = {
 
     },
     extend: {
+      fontFamily: {
+        display: ["var(--font-anton)", "sans-serif"],
+        signature: ["var(--font-signature)", "cursive"],
+      },
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",

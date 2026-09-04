@@ -1,7 +1,7 @@
 
 
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Inter, Anton, Sacramento } from "next/font/google";
 import "./globals.css";
 import { JetBrains_Mono } from "next/font/google";
 import Header from "@/components/main/Header";
@@ -18,6 +18,16 @@ const  JetBrainsMono = JetBrains_Mono({
   subsets: ["latin"],
   weight:["100","200","300","400","500","600","700","800"],
   variable:"--font-JetBrains_Mono"
+})
+const anton = Anton({
+  subsets: ["latin"],
+  weight: "400",
+  variable: "--font-anton",
+})
+const sacramento = Sacramento({
+  subsets: ["latin"],
+  weight: "400",
+  variable: "--font-signature",
 })
 export const metadata: Metadata = {
   title: 'Muazam Mughal | Full-Stack Engineer (Next.js, AI, Cloud)',
@@ -59,7 +69,7 @@ export default function RootLayout({
 
 <html lang="en">
          
-      <body className={`${JetBrainsMono.variable} text-black font-bold dark:font-normal bg-white/10  dark:text-white  dark:bg-[#030014]  `}>
+      <body className={`${JetBrainsMono.variable} ${anton.variable} ${sacramento.variable} text-black font-bold dark:font-normal bg-white/10  dark:text-white  dark:bg-[#030014]  `}>
       <Toaster position="top-center"/>
       <ThemeSwitch/>
         <Header/>

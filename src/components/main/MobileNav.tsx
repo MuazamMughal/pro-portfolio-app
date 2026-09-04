@@ -1,81 +1,58 @@
 "use client"
 import { usePathname } from 'next/navigation'
-import React from 'react'
 import { Sheet, SheetContent, SheetTrigger } from '../ui/sheet'
 import { CiMenuFries } from 'react-icons/ci'
 import Link from 'next/link'
-import Muazam_Avatar from "@/../public/Muazam_Avatar-removebg-preview.png"
 import Image from 'next/image'
+import Muazam_Avatar from "@/../public/NewAvatar.png"
+import { cn } from '@/lib/utils'
 
-
-
-interface link{
+interface link {
     name: string,
     path: string
 }
-const links = [
-    {
-        name: "Home",
-        path: "/"
-    },
-    {
-        name: "About Me",
-        path: "/aboutme"
-    },
-    {
-        name: "Blog",
-        path: "/blog"
-    },
-    {
-        name: "Resume",
-        path: "/resume"
-    },
-    {
-        name: "Work",
-        path: "/work"
-    },
-    {
-        name: "Contact",
-        path: "/contact"
-    },
+const links: link[] = [
+    { name: "Home", path: "/" },
+    { name: "Resume", path: "/resume" },
+    { name: "Work", path: "/work" },
+    { name: "Contact", path: "/contact" },
 ]
 
 const MobileNav = () => {
     const pathname = usePathname()
 
-  return (
-    <Sheet>
-        <SheetTrigger className='flex item-center justify-center '>
-            <CiMenuFries className='   text-4xl  text-green-300'/>
-        </SheetTrigger>
-        <SheetContent className='flex flex-col bg-white/30 dark:bg-[#27272c]'>
-            {/* adding the logo to the sheets */}
-            <div className=' mt-12 mb-6 text-center text-2xl' >
-            <Link href={"/"}>
-                    <h1 className='font-bold  ml-32 text-3xl flex '>
-                        <Image src={Muazam_Avatar} alt='logo' className='h-15 w-16'>
-                        </Image> <span className='pt-6  text-green-400'>.</span> 
-                    </h1>
+    return (
+        <Sheet>
+            <SheetTrigger className="flex h-9 w-9 items-center justify-center opacity-90 transition-opacity hover:opacity-100">
+                <CiMenuFries className="text-2xl text-green-400" />
+            </SheetTrigger>
+            <SheetContent className="flex flex-col border-white/10 bg-[#030014]">
+                <Link href="/" className="mb-10 mt-10 flex items-center gap-3">
+                    <span className="relative h-9 w-9 overflow-hidden rounded-full">
+                        <Image src={Muazam_Avatar} alt="Muazam Mughal" fill className="object-cover" />
+                    </span>
+                    <span className="font-signature text-2xl text-white">Muazam Mughal</span>
                 </Link>
-
-            </div>
-            <nav className='flex flex-col gap-4 items-center justify-center'>
-                {links.map((link, index) =>{
-                    return(
-                    <Link href={link.path} 
-                    key={index}
-                    className={`${link.path == pathname&&
-                        " text-green-300 border-b-4  px-12 border-green-800"}
-                        text-xl font-semibold  px-12 text-green-200 rounded-md p-2 transition-all hover:bg-green-900`}>
-                        {link.name}
-                    </Link>
-                    )
-                })}
-            </nav>
-
-        </SheetContent>
-    </Sheet>
-  )
+                <nav className="flex flex-col gap-6">
+                    {links.map((link) => {
+                        const active = link.path === pathname
+                        return (
+                            <Link
+                                key={link.path}
+                                href={link.path}
+                                className={cn(
+                                    "text-lg font-medium transition-colors duration-300",
+                                    active ? "text-green-400" : "text-slate-300 hover:text-white"
+                                )}
+                            >
+                                {link.name}
+                            </Link>
+                        )
+                    })}
+                </nav>
+            </SheetContent>
+        </Sheet>
+    )
 }
 
 export default MobileNav

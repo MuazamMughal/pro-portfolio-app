@@ -1,6 +1,6 @@
 {
     "compilerOptions": {
-      "lib": ["dom", "dom.iterable", "esnext", "webworker"], // Added webworker for OffscreenCanvas support
+      "lib": ["dom", "dom.iterable", "esnext"],
       "allowJs": true,
       "skipLibCheck": true,
       "strict": true,
@@ -20,15 +20,9 @@
       "paths": {
         "@/*": ["./src/*"]
       },
-      // Added type roots and types configuration
       "typeRoots": [
         "./node_modules/@types",
         "./src/types"
-      ],
-      "types": [
-        "node",
-        "offscreencanvas",
-        "draco3d"
       ]
     },
     "include": [

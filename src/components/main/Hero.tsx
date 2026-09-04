@@ -1,114 +1,44 @@
 "use client"
-import Image from 'next/image'
-import React from 'react'
-import { MouseParallaxContainer, MouseParallaxChild } from "react-parallax-mouse"
-import eng from "../../../public/2.svg"
-import mm from "../../../public/mm2.svg"
-import Typewriter from 'typewriter-effect';
 import Link from 'next/link'
-import { Button } from '../ui/button'
-import Social from './Social'
 import { motion } from 'framer-motion'
+import { FaGithub, FaLinkedin, FaWhatsapp } from 'react-icons/fa'
+const socials = [
+  { icon: <FaGithub />, path: 'https://github.com/MuazamMughal', label: 'GitHub' },
+  { icon: <FaLinkedin />, path: 'https://www.linkedin.com/in/muazam-mughal/', label: 'LinkedIn' },
+  { icon: <FaWhatsapp />, path: 'https://wa.me/+923034510773', label: 'WhatsApp' },
+]
+
 const Hero = () => {
   return (
-    <div>
-     <motion.div initial={{opacity:0}}
-        animate={{opacity:1,
-            transition:{delay:0.1,duration:2,ease:"easeInOut"}
-        }}>
-         
-      <div className='flex flex-col  pl-10  justify-center items-center z-20 '>
+    <div className="relative z-10 flex h-full min-h-[calc(100svh-96px)] flex-col items-center justify-end gap-3 px-4 pb-10 text-center sm:pb-14">
+      {/* <motion.p
+        initial={{ opacity: 0, y: 16 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 0.5, duration: 0.7, ease: 'easeOut' }}
+        className="max-w-md text-sm text-slate-300 drop-shadow-[0_2px_8px_rgba(0,0,0,0.8)] sm:text-base"
+      >
+        Full-Stack Engineer &amp; AI Product Developer building fast, elegant web experiences.
+      </motion.p> */}
 
-        <MouseParallaxContainer
-          globalFactorX={0.1}
-          globalFactorY={0.2}
-          resetOnLeave
-          className='relative flex items-center  h-[220px] '>
-          <MouseParallaxChild>
-            <div className=' '>
-              <Image
-                src={eng}
-
-                height={230}
-                alt='image'
-                className=" pl-4 opacity-30 " />
-
-            </div>
-
-          </MouseParallaxChild>
-
-
-          <MouseParallaxChild className='absolute xl:left- z-30'
-            factorX={0.5}
-            factorY={0.5}>
-            <div className=' '>
-              <Image
-                src={mm}
-
-                height={500}
-                alt='image'
-                className=" pt-24 lg:xl:pt-36  opacity- " />
-
-            </div>
-
-          </MouseParallaxChild>
-
-        </MouseParallaxContainer>
-
-
-      </div>
-      <motion.div initial={{opacity:0}}
-        animate={{opacity:1,
-            transition:{delay:0.3,duration:2,ease:"easeInOut"}
-        }}>
-      
-      {/* this is for the text beneth */}
-      <div className='flex flex-row items-center justify-center lg:md:justify-normal'>
-
-        <div className='hidden lg:flex xl:flex items-center'>
-          <Social />
-        </div>
-
-        <div className=' opacity-75 text-center  transition-all  text-lg lg:md:pl-24 lg:text-left xl:text-left'>
-          <p>
-            Excel at Crafting Elegant Digital Experiences
-          </p>
-          <p className='pl-'>  Express Feelings in Code.</p>
-          <div className='flex flex-col items-center lg:md:flex-row'>
-            <h1 className=" text-3xl mt-3 font-medium text-slate-800 dark:text-gray-200">Coding is My &quot; </h1>
-            <h1 className='text-3xl mt-3 text-green-500 tracking-wide font-medium'>
-              <Typewriter
-
-                options={{
-                  strings: [" Present", " Passion", " Pleasure"],
-                  autoStart: true,
-                  loop: true,
-
-                }}
-              />
-            </h1>
-
-          </div>
-        </div>
-
-      </div>
-      
-      <div className='lg:md:pl-36 pt-8'>
-        <Link href={"/"}>
-          <Button className=' text-lg hover:text-slate-200 rounded-2xl px-5  bg-transparent dark:bg-black font-medium text-green-600 hover:bg-green-600 border-2 border-green-600'>
-            Download CV
-          </Button>
-        </Link>
-      </div>
-      <div className=' md:hidden xl:lg:hidden items-center'>
-          <Social />
-        </div>
-        
-        </motion.div>
-        </motion.div>
-
-
-        
+      <motion.div
+        initial={{ opacity: 0, y: 16 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 0.65, duration: 0.7, ease: 'easeOut' }}
+        className="flex items-center gap-3 pt-1"
+      >
+        {socials.map((social) => (
+          <Link
+            key={social.label}
+            href={social.path}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label={social.label}
+            className="flex h-10 w-10 items-center justify-center rounded-full border border-white/10 bg-white/5 text-lg text-slate-200 backdrop-blur-sm transition-all duration-300 hover:-translate-y-0.5 hover:border-green-500/40 hover:bg-green-500/10 hover:text-green-400"
+          >
+            {social.icon}
+          </Link>
+        ))}
+      </motion.div>
     </div>
   )
 }
