@@ -163,9 +163,9 @@ const learning = [
 
 const SectionLabel = ({ index, title }: { index: string; title: string }) => (
   <div className="mb-8 flex items-baseline gap-3">
-    <span className="font-primary text-sm text-green-400/70">{index}</span>
-    <h2 className="text-2xl font-bold text-white">{title}</h2>
-    <span className="h-px flex-1 bg-white/10" />
+    <span className="font-primary text-sm text-green-600/70 dark:text-green-400/70">{index}</span>
+    <h2 className="text-2xl font-bold text-foreground">{title}</h2>
+    <span className="h-px flex-1 bg-foreground/10" />
   </div>
 )
 
@@ -176,16 +176,16 @@ const ResumePage = () => {
     .join('')
 
   return (
-    <main className="relative min-h-screen bg-[#030014] text-white">
+    <main className="relative min-h-screen bg-background text-foreground">
       {/* Ambient background */}
       <div className="pointer-events-none fixed inset-0">
         <div className="absolute -top-32 left-1/4 h-72 w-72 rounded-full bg-green-500/10 blur-[100px]" />
         <div className="absolute top-1/2 right-0 h-72 w-72 rounded-full bg-cyan-500/10 blur-[100px]" />
         <div
-          className="absolute inset-0 opacity-[0.03]"
+          className="absolute inset-0 text-foreground opacity-[0.03]"
           style={{
             backgroundImage:
-              'linear-gradient(to right, white 1px, transparent 1px), linear-gradient(to bottom, white 1px, transparent 1px)',
+              'linear-gradient(to right, currentColor 1px, transparent 1px), linear-gradient(to bottom, currentColor 1px, transparent 1px)',
             backgroundSize: '64px 64px',
           }}
         />
@@ -198,21 +198,21 @@ const ResumePage = () => {
             <div className="animate-fade-in">
               <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-green-500/30 bg-green-500/10 px-4 py-2 backdrop-blur-sm">
                 <span className="h-1.5 w-1.5 rounded-full bg-green-400" />
-                <span className="text-xs font-medium tracking-[0.2em] text-green-400">RESUME</span>
+                <span className="text-xs font-medium tracking-[0.2em] text-green-600 dark:text-green-400">RESUME</span>
               </div>
 
-              <div className="mb-5 flex h-16 w-16 items-center justify-center rounded-2xl border border-green-500/30 bg-gradient-to-br from-green-500/20 to-cyan-500/10 font-primary text-xl font-bold text-green-400">
+              <div className="mb-5 flex h-16 w-16 items-center justify-center rounded-2xl border border-green-500/30 bg-gradient-to-br from-green-500/20 to-cyan-500/10 font-primary text-xl font-bold text-green-600 dark:text-green-400">
                 {initials}
               </div>
 
-              <h1 className="mb-1 text-3xl font-bold tracking-tight text-white">{personalInfo.name}</h1>
-              <p className="mb-6 font-medium text-green-400">{personalInfo.title}</p>
+              <h1 className="mb-1 text-3xl font-bold tracking-tight text-foreground">{personalInfo.name}</h1>
+              <p className="mb-6 font-medium text-green-600 dark:text-green-400">{personalInfo.title}</p>
 
-              <div className="mb-8 grid grid-cols-3 gap-3 border-y border-white/10 py-5">
+              <div className="mb-8 grid grid-cols-3 gap-3 border-y border-border py-5">
                 {stats.map((stat) => (
                   <div key={stat.label}>
-                    <div className="text-lg font-bold text-white">{stat.value}</div>
-                    <div className="text-[11px] uppercase leading-tight tracking-wide text-slate-500">{stat.label}</div>
+                    <div className="text-lg font-bold text-foreground">{stat.value}</div>
+                    <div className="text-[11px] uppercase leading-tight tracking-wide text-muted-foreground/70">{stat.label}</div>
                   </div>
                 ))}
               </div>
@@ -221,7 +221,7 @@ const ResumePage = () => {
                 {contactItems.map((item) => {
                   const content = (
                     <>
-                      <item.icon className="h-4 w-4 shrink-0 text-green-400" />
+                      <item.icon className="h-4 w-4 shrink-0 text-green-600 dark:text-green-400" />
                       <span className="truncate">{item.label}</span>
                     </>
                   )
@@ -229,12 +229,12 @@ const ResumePage = () => {
                     <a
                       key={item.label}
                       href={item.href}
-                      className="flex items-center gap-3 text-sm text-slate-300 transition-colors hover:text-green-400"
+                      className="flex items-center gap-3 text-sm text-foreground/80 transition-colors hover:text-green-600 dark:hover:text-green-400"
                     >
                       {content}
                     </a>
                   ) : (
-                    <div key={item.label} className="flex items-center gap-3 text-sm text-slate-300">
+                    <div key={item.label} className="flex items-center gap-3 text-sm text-foreground/80">
                       {content}
                     </div>
                   )
@@ -249,7 +249,7 @@ const ResumePage = () => {
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label={s.label}
-                    className="flex h-10 w-10 items-center justify-center rounded-full border border-white/10 bg-white/[0.03] text-slate-300 transition-colors hover:border-green-500/40 hover:text-green-400"
+                    className="flex h-10 w-10 items-center justify-center rounded-full border border-border bg-foreground/[0.03] text-foreground/80 transition-colors hover:border-green-500/40 hover:text-green-600 dark:hover:text-green-400"
                   >
                     <s.icon className="h-4 w-4" />
                   </a>
@@ -263,16 +263,16 @@ const ResumePage = () => {
               </div>
 
               <div className="mb-8">
-                <h3 className="mb-4 text-xs font-semibold uppercase tracking-[0.15em] text-slate-500">Skills</h3>
+                <h3 className="mb-4 text-xs font-semibold uppercase tracking-[0.15em] text-muted-foreground/70">Skills</h3>
                 <div className="space-y-4">
                   {skillGroups.map((group) => (
                     <div key={group.category}>
-                      <p className="mb-2 text-xs text-slate-500">{group.category}</p>
+                      <p className="mb-2 text-xs text-muted-foreground/70">{group.category}</p>
                       <div className="flex flex-wrap gap-1.5">
                         {group.skills.map((skill) => (
                           <span
                             key={skill}
-                            className="rounded-md bg-white/5 px-2 py-1 text-xs text-slate-300 transition-colors hover:bg-green-500/10 hover:text-green-400"
+                            className="rounded-md bg-foreground/5 px-2 py-1 text-xs text-foreground/80 transition-colors hover:bg-green-500/10 hover:text-green-600 dark:hover:text-green-400"
                           >
                             {skill}
                           </span>
@@ -284,10 +284,10 @@ const ResumePage = () => {
               </div>
 
               <div className="mb-8">
-                <h3 className="mb-4 text-xs font-semibold uppercase tracking-[0.15em] text-slate-500">Soft Skills</h3>
+                <h3 className="mb-4 text-xs font-semibold uppercase tracking-[0.15em] text-muted-foreground/70">Soft Skills</h3>
                 <div className="flex flex-wrap gap-1.5">
                   {softSkills.map((skill) => (
-                    <span key={skill} className="rounded-md bg-white/5 px-2 py-1 text-xs text-slate-300">
+                    <span key={skill} className="rounded-md bg-foreground/5 px-2 py-1 text-xs text-foreground/80">
                       {skill}
                     </span>
                   ))}
@@ -295,14 +295,14 @@ const ResumePage = () => {
               </div>
 
               <div>
-                <h3 className="mb-4 text-xs font-semibold uppercase tracking-[0.15em] text-slate-500">Currently Learning</h3>
+                <h3 className="mb-4 text-xs font-semibold uppercase tracking-[0.15em] text-muted-foreground/70">Currently Learning</h3>
                 <div className="flex flex-wrap gap-1.5">
                   {learning.map((item) => (
                     <span
                       key={item.name}
-                      className="flex items-center gap-1.5 rounded-md bg-white/5 px-2 py-1 text-xs text-slate-300"
+                      className="flex items-center gap-1.5 rounded-md bg-foreground/5 px-2 py-1 text-xs text-foreground/80"
                     >
-                      <item.icon className="h-3 w-3 text-green-400" />
+                      <item.icon className="h-3 w-3 text-green-600 dark:text-green-400" />
                       {item.name}
                     </span>
                   ))}
@@ -317,16 +317,16 @@ const ResumePage = () => {
             <section className="mb-20 animate-fade-in">
               <SectionLabel index="01" title="About" />
               <div className="space-y-4">
-                <p className="text-lg leading-relaxed text-slate-300">
+                <p className="text-lg leading-relaxed text-foreground/80">
                   Full-Stack Developer with 2+ years of experience designing and building web and mobile
                   applications using Laravel, Node.js, Next.js, React Native, and Jamstack architectures.
                 </p>
-                <p className="leading-relaxed text-slate-400">
+                <p className="leading-relaxed text-muted-foreground">
                   I specialize in developing RESTful APIs, integrating third-party services, and building secure
                   backend systems — with a strong commitment to writing clean, maintainable code and delivering
                   reliable, production-ready solutions in collaborative, agile environments.
                 </p>
-                <p className="leading-relaxed text-slate-400">
+                <p className="leading-relaxed text-muted-foreground">
                   Currently, I&apos;m expanding my knowledge in Cloud Applied Generative AI Engineering (GenEng),
                   exploring Python, FastAPI, OpenAI, and related technologies to stay at the forefront of modern
                   development.
@@ -340,27 +340,27 @@ const ResumePage = () => {
               <div className="space-y-10">
                 {experience.map((job) => (
                   <article key={job.company} className="group relative pl-8">
-                    <div className="absolute left-0 top-1.5 h-full w-px bg-white/10 group-last:h-2" />
-                    <div className="absolute left-0 top-1.5 h-2 w-2 -translate-x-[3px] rounded-full bg-green-400 shadow-[0_0_10px_rgba(74,222,128,0.6)]" />
+                    <div className="absolute left-0 top-1.5 h-full w-px bg-foreground/10 group-last:h-2" />
+                    <div className="absolute left-0 top-1.5 h-2 w-2 -translate-x-[3px] rounded-full bg-green-500 shadow-[0_0_10px_rgba(74,222,128,0.6)] dark:bg-green-400" />
                     <div className="mb-2 flex flex-wrap items-start justify-between gap-2">
                       <div>
-                        <h3 className="text-lg font-semibold text-white">{job.role}</h3>
-                        <p className="text-sm font-medium text-green-400">{job.company}</p>
+                        <h3 className="text-lg font-semibold text-foreground">{job.role}</h3>
+                        <p className="text-sm font-medium text-green-600 dark:text-green-400">{job.company}</p>
                       </div>
-                      <time className="font-primary text-xs text-slate-500">{job.duration}</time>
+                      <time className="font-primary text-xs text-muted-foreground/70">{job.duration}</time>
                     </div>
-                    <p className="mb-3 text-sm text-slate-400">{job.description}</p>
+                    <p className="mb-3 text-sm text-muted-foreground">{job.description}</p>
                     <ul className="mb-4 space-y-1.5">
                       {job.points.map((point) => (
-                        <li key={point} className="flex gap-2 text-sm leading-relaxed text-slate-300">
-                          <span className="mt-2 h-1 w-1 shrink-0 rounded-full bg-slate-600" />
+                        <li key={point} className="flex gap-2 text-sm leading-relaxed text-foreground/80">
+                          <span className="mt-2 h-1 w-1 shrink-0 rounded-full bg-muted-foreground/60" />
                           {point}
                         </li>
                       ))}
                     </ul>
                     <div className="flex flex-wrap gap-2">
                       {job.technologies.map((tech) => (
-                        <span key={tech} className="rounded-md bg-white/5 px-2 py-1 text-xs text-slate-500">
+                        <span key={tech} className="rounded-md bg-foreground/5 px-2 py-1 text-xs text-muted-foreground/70">
                           {tech}
                         </span>
                       ))}
@@ -382,21 +382,21 @@ const ResumePage = () => {
                       {...(project.link
                         ? { href: project.link, target: '_blank', rel: 'noopener noreferrer' }
                         : {})}
-                      className="group flex flex-col rounded-xl border border-white/10 bg-white/[0.02] p-5 transition-colors hover:border-green-500/30"
+                      className="group flex flex-col rounded-xl border border-border bg-foreground/[0.02] p-5 transition-colors hover:border-green-500/30"
                     >
                       <div className="mb-2 flex items-start justify-between gap-2">
-                        <h3 className="font-semibold text-white transition-colors group-hover:text-green-400">
+                        <h3 className="font-semibold text-foreground transition-colors group-hover:text-green-600 dark:group-hover:text-green-400">
                           {project.name}
                         </h3>
                         {project.link && (
-                          <ExternalLink className="h-4 w-4 shrink-0 text-slate-500 transition-colors group-hover:text-green-400" />
+                          <ExternalLink className="h-4 w-4 shrink-0 text-muted-foreground/70 transition-colors group-hover:text-green-600 dark:group-hover:text-green-400" />
                         )}
                       </div>
-                      <p className="mb-3 text-sm text-slate-400">{project.description}</p>
-                      <p className="mb-4 text-xs text-slate-500">{project.contribution}</p>
+                      <p className="mb-3 text-sm text-muted-foreground">{project.description}</p>
+                      <p className="mb-4 text-xs text-muted-foreground/70">{project.contribution}</p>
                       <div className="mt-auto flex flex-wrap gap-1.5">
                         {project.technologies.map((tech) => (
-                          <span key={tech} className="rounded-md bg-white/5 px-2 py-1 text-xs text-slate-500">
+                          <span key={tech} className="rounded-md bg-foreground/5 px-2 py-1 text-xs text-muted-foreground/70">
                             {tech}
                           </span>
                         ))}
@@ -414,18 +414,18 @@ const ResumePage = () => {
                 {education.map((edu) => (
                   <div key={edu.degree} className="flex flex-wrap items-start justify-between gap-2 py-4">
                     <div>
-                      <h3 className="font-medium text-white">{edu.degree}</h3>
-                      <p className="text-sm text-slate-400">{edu.institution}</p>
+                      <h3 className="font-medium text-foreground">{edu.degree}</h3>
+                      <p className="text-sm text-muted-foreground">{edu.institution}</p>
                     </div>
-                    <time className="font-primary text-xs text-slate-500">{edu.duration}</time>
+                    <time className="font-primary text-xs text-muted-foreground/70">{edu.duration}</time>
                   </div>
                 ))}
               </div>
             </section>
 
             {/* Footer CTA */}
-            <footer className="flex flex-col items-start gap-4 border-t border-white/10 pt-10 sm:flex-row sm:items-center sm:justify-between">
-              <p className="text-slate-400">Interested in working together? Let&apos;s connect.</p>
+            <footer className="flex flex-col items-start gap-4 border-t border-border pt-10 sm:flex-row sm:items-center sm:justify-between">
+              <p className="text-muted-foreground">Interested in working together? Let&apos;s connect.</p>
               <a
                 href={`mailto:${personalInfo.email}`}
                 className="inline-flex items-center gap-2 rounded-full bg-green-500 px-6 py-3 text-sm font-medium text-white transition-all hover:bg-green-600 hover:shadow-lg hover:shadow-green-500/25"

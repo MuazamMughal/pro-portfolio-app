@@ -33,7 +33,7 @@ const Hero = () => {
             target="_blank"
             rel="noopener noreferrer"
             aria-label={social.label}
-            className="flex h-10 w-10 items-center justify-center rounded-full border border-white/10 bg-white/5 text-lg text-slate-200 backdrop-blur-sm transition-all duration-300 hover:-translate-y-0.5 hover:border-green-500/40 hover:bg-green-500/10 hover:text-green-400"
+            className="flex h-10 w-10 items-center justify-center rounded-full border border-foreground/10 bg-foreground/5 text-lg text-foreground/80 backdrop-blur-sm transition-all duration-300 hover:-translate-y-0.5 hover:border-green-500/40 hover:bg-green-500/10 hover:text-green-600 dark:hover:text-green-400"
           >
             {social.icon}
           </Link>

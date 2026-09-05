@@ -17,7 +17,7 @@ const PageTransition = ({
             initial={{opacity: 1}} 
             animate={{opacity: 0 , 
                 transition:{ delay:0.3 ,duration:2 , ease:"easeInOut"}}}
-                className=' h-screen w-screen fixed bg-[#030014] top-0 pointer-events-none' >
+                className=' h-screen w-screen fixed bg-background top-0 pointer-events-none' >
 
             </motion.div>
 

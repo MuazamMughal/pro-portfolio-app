@@ -13,10 +13,10 @@ const Photo = () => {
         transition={{ duration: 1.2, ease: "easeOut" }}
         className="absolute inset-0 z-0 flex items-center justify-center -translate-y-[17%]"
       >
-        <span className="font-display select-none whitespace-nowrap text-[26vw] leading-none tracking-tight text-green-500/20">
+        <span className="font-display select-none whitespace-nowrap text-[26vw] leading-none tracking-tight text-green-600/20 dark:text-green-500/20">
           ENGINEER
         </span>
-        <div className="pointer-events-none absolute inset-0 bg-gradient-to-r from-[#030114]/10 via-[#030014] to-[#030114]/10" />
+        <div className="pointer-events-none absolute inset-0 bg-gradient-to-r from-background/10 via-background to-background/10" />
       </motion.div>
 
       {/* MUAZAM on left side behind portrait */}
@@ -26,7 +26,7 @@ const Photo = () => {
         transition={{ duration: 1.2, ease: "easeOut", delay: 0.2 }}
         className="absolute inset-0 z-5 flex items-center justify-start pl-[5%] translate-y-[15%]"
       >
-        <span className="font-display font-black select-none whitespace-nowrap text-[15vw] leading-none tracking-tight text-white/40">
+        <span className="font-display font-black select-none whitespace-nowrap text-[15vw] leading-none tracking-tight text-foreground/[0.15] dark:text-foreground/40">
           MUAZAM
         </span>
       </motion.div>
@@ -38,7 +38,7 @@ const Photo = () => {
         transition={{ duration: 1.2, ease: "easeOut", delay: 0.3 }}
         className="absolute inset-0 z-5 flex items-center justify-end pr-[5%] translate-y-[15%]"
       >
-        <span className="font-display font-black select-none whitespace-nowrap text-[15vw] leading-none tracking-tight text-white/40">
+        <span className="font-display font-black select-none whitespace-nowrap text-[15vw] leading-none tracking-tight text-foreground/[0.15] dark:text-foreground/40">
           MUGHAL
         </span>
       </motion.div>
@@ -56,7 +56,7 @@ const Photo = () => {
             alt=""
             aria-hidden
             fill
-            className="object-contain object-bottom [filter:grayscale(1)_contrast(1.05)_brightness(0.45)]"
+            className="object-contain object-bottom [filter:grayscale(1)_contrast(1.05)_brightness(0.85)] dark:[filter:grayscale(1)_contrast(1.05)_brightness(0.45)]"
           />
         </div>
       </motion.div>
@@ -74,7 +74,7 @@ const Photo = () => {
             alt=""
             aria-hidden
             fill
-            className="object-contain object-bottom [filter:grayscale(1)_contrast(1.05)_brightness(0.45)]"
+            className="object-contain object-bottom [filter:grayscale(1)_contrast(1.05)_brightness(0.85)] dark:[filter:grayscale(1)_contrast(1.05)_brightness(0.45)]"
           />
         </div>
       </motion.div>
@@ -94,17 +94,17 @@ const Photo = () => {
             priority
             quality={95}
             sizes="(max-width: 768px) 100vw, 1000px"
-            className="object-contain object-bottom [filter:grayscale(1)_contrast(1.08)_brightness(0.75)]"
+            className="object-contain object-bottom [filter:grayscale(1)_contrast(1.05)_brightness(1)] dark:[filter:grayscale(1)_contrast(1.08)_brightness(0.75)]"
           />
         </div>
       </motion.div>
 
       {/* fade the portrait into the page background — thin edge bands only,
           so the fade never eats into the subject itself */}
-      <div className="pointer-events-none absolute inset-x-0 bottom-0 z-30 h-[12%] bg-gradient-to-t from-[#030014] to-transparent" />
-      <div className="pointer-events-none absolute inset-x-0 top-0 z-30 h-[18%] bg-gradient-to-b from-[#030014] to-transparent" />
-      <div className="pointer-events-none absolute inset-y-0 left-0 z-30 w-[10%] bg-gradient-to-r from-[#030014] to-transparent" />
-      <div className="pointer-events-none absolute inset-y-0 right-0 z-30 w-[10%] bg-gradient-to-l from-[#030014] to-transparent" />
+      <div className="pointer-events-none absolute inset-x-0 bottom-0 z-30 h-[12%] bg-gradient-to-t from-background to-transparent" />
+      <div className="pointer-events-none absolute inset-x-0 top-0 z-30 h-[18%] bg-gradient-to-b from-background to-transparent" />
+      <div className="pointer-events-none absolute inset-y-0 left-0 z-30 w-[10%] bg-gradient-to-r from-background to-transparent" />
+      <div className="pointer-events-none absolute inset-y-0 right-0 z-30 w-[10%] bg-gradient-to-l from-background to-transparent" />
     </div>
   )
 }

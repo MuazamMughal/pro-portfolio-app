@@ -1,60 +1,56 @@
 "use client"
-import React, { useEffect, useState } from 'react'
-import { Button } from './ui/button'
 
-import { BsMoon, BsSun } from 'react-icons/bs'
+import { useEffect, useState } from "react"
+import { Moon, Sun } from "lucide-react"
 
+type Theme = "light" | "dark"
 
-type Theme = "light" | "dark" 
+const applyTheme = (theme: Theme) => {
+  document.documentElement.classList.toggle("dark", theme === "dark")
+}
 
+const getInitialTheme = (): Theme => {
+  const stored = window.localStorage.getItem("theme")
+  if (stored === "light" || stored === "dark") return stored
+  return window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light"
+}
 
-const ThemeSwitch = () => {
+const ThemeSwitch = ({ className }: { className?: string }) => {
+  const [theme, setTheme] = useState<Theme | null>(null)
 
+  useEffect(() => {
+    const initial = getInitialTheme()
+    applyTheme(initial)
+    setTheme(initial)
+  }, [])
 
-    const [darkmode , setDarkMode] = useState(true)
-
-
-    // const toggleTheme  = () => {
-    //     if (theme === "light") {
-    //         setTheme("dark")
-    //         window.localStorage.setItem("theme", "dark")
-    //         document.documentElement.classList.add("dark")
-    //     } else {
-    //         setTheme("light")
-    //         window.localStorage.setItem("theme", "light")
-    //         document.documentElement.classList.add("light")
-    //     } 
-    // } 
-    useEffect(() => {
-        const theme = localStorage.getItem("theme") 
-
-    if (theme === "dark") setDarkMode(true)
-
-    }  , [])
-    useEffect(() => {
-        if(darkmode){
-            document.documentElement.classList.add('dark')
-            localStorage.setItem('theme',"dark")
-        }else{
-            document.documentElement.classList.remove('dark')
-            localStorage.setItem('theme',"light")
-        }
-    } , [darkmode])
-     
-        
-          
-        
+  const toggle = () => {
+    setTheme((prev) => {
+      const next: Theme = prev === "dark" ? "light" : "dark"
+      applyTheme(next)
+      window.localStorage.setItem("theme", next)
+      return next
+    })
+  }
 
   return (
-    <Button className='fixed bottom-5 right-5 w-[3rem] h-[3rem] bg-opacity-10
-     backdrop-blur-[0.5rem] border border-green-700 border-opacity-40 shadow-2xl
-     rounded-full flex items-center justify-center hover:scale-[1.15] active:scale-105
-     transition-all fornt-bold text-2xl text-green-700 '
-     onClick={()=>setDarkMode(!darkmode)}>
-
-        {darkmode ? <BsMoon />:<BsSun />}
-
-    </Button>
+    <button
+      type="button"
+      onClick={toggle}
+      aria-label="Toggle theme"
+      className={
+        className ??
+        "flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-border text-foreground/70 transition-colors hover:border-green-500/40 hover:text-green-500"
+      }
+    >
+      {theme === null ? (
+        <span className="h-4 w-4" />
+      ) : theme === "dark" ? (
+        <Sun className="h-4 w-4" />
+      ) : (
+        <Moon className="h-4 w-4" />
+      )}
+    </button>
   )
 }
 

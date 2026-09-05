@@ -27,8 +27,8 @@ const Nav = () => {
                         className={cn(
                             "relative py-1 text-sm font-medium transition-colors duration-300",
                             active
-                                ? "text-green-400 after:absolute after:-bottom-1 after:left-0 after:h-px after:w-full after:bg-green-400"
-                                : "text-slate-300 hover:text-white"
+                                ? "text-green-600 after:absolute after:-bottom-1 after:left-0 after:h-px after:w-full after:bg-green-600 dark:text-green-400 dark:after:bg-green-400"
+                                : "text-foreground/70 hover:text-foreground"
                         )}
                     >
                         {link.name}

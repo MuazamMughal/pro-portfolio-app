@@ -26,12 +26,12 @@ const MobileNav = () => {
             <SheetTrigger className="flex h-9 w-9 items-center justify-center opacity-90 transition-opacity hover:opacity-100">
                 <CiMenuFries className="text-2xl text-green-400" />
             </SheetTrigger>
-            <SheetContent className="flex flex-col border-white/10 bg-[#030014]">
+            <SheetContent className="flex flex-col border-border bg-background">
                 <Link href="/" className="mb-10 mt-10 flex items-center gap-3">
                     <span className="relative h-9 w-9 overflow-hidden rounded-full">
                         <Image src={Muazam_Avatar} alt="Muazam Mughal" fill className="object-cover" />
                     </span>
-                    <span className="font-signature text-2xl text-white">Muazam Mughal</span>
+                    <span className="font-signature text-2xl text-foreground">Muazam Mughal</span>
                 </Link>
                 <nav className="flex flex-col gap-6">
                     {links.map((link) => {
@@ -42,7 +42,7 @@ const MobileNav = () => {
                                 href={link.path}
                                 className={cn(
                                     "text-lg font-medium transition-colors duration-300",
-                                    active ? "text-green-400" : "text-slate-300 hover:text-white"
+                                    active ? "text-green-600 dark:text-green-400" : "text-foreground/70 hover:text-foreground"
                                 )}
                             >
                                 {link.name}

@@ -3,17 +3,18 @@ import Image from 'next/image'
 import Muazam_Avatar from "@/../public/NewAvatar.png"
 import Nav from './Nav'
 import MobileNav from './MobileNav'
+import ThemeSwitch from '@/components/theme-switch'
 
 const Header = () => {
     return (
         <header className="sticky top-2 z-[60] px-4 pt-2">
             <div className="container mx-auto">
-                <div className="flex items-center gap-4 rounded-full bg-[#0b0b12]/80 px-3 py-2.5 shadow-2xl shadow-black/60 backdrop-blur-xl lg:px-4">
+                <div className="flex items-center gap-4 rounded-full bg-transparent px-3 py-2.5 lg:px-4">
                     <Link
                         href="/"
                         className="flex shrink-0 items-center gap-3 rounded-full py-1 pl-1 pr-3 transition-opacity duration-300 hover:opacity-80"
                     >
-                        <span className="h-9 w-9 overflow-hidden rounded-xl ring-1 ring-white/10">
+                        <span className="h-9 w-9 overflow-hidden rounded-xl ring-1 ring-foreground/10">
                             <Image
                                 src={Muazam_Avatar}
                                 alt="Muazam Mughal"
@@ -21,7 +22,7 @@ const Header = () => {
                                 priority
                             />
                         </span>
-                        <span className="hidden text-sm font-semibold text-white sm:block">
+                        <span className="hidden text-sm font-semibold text-foreground sm:block">
                             Muazam Mughal
                         </span>
                     </Link>
@@ -30,18 +31,20 @@ const Header = () => {
                         <Nav />
                     </div>
 
-                    <div className="ml-auto hidden lg:flex">
+                    <div className="ml-auto hidden items-center gap-3 lg:flex">
+                        <ThemeSwitch />
                         <Link
-                            href="https://join.skype.com/invite/Obnbkt2VCmvB"
+                            href="https://wa.me/923034510773"
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="rounded-full bg-white px-5 py-2.5 text-xs font-semibold tracking-wide text-black transition-all duration-300 hover:scale-105 hover:bg-slate-200"
+                            className="rounded-full bg-gradient-to-r from-green-600 to-emerald-600 px-5 py-2.5 text-xs font-semibold tracking-wide text-white transition-all duration-300 hover:scale-105 hover:from-green-500 hover:to-emerald-500 hover:shadow-lg hover:shadow-green-500/25"
                         >
-                            Book a Call
+                            Let&apos;s Talk
                         </Link>
                     </div>
 
-                    <div className="ml-auto lg:hidden">
+                    <div className="ml-auto flex items-center gap-2 lg:hidden">
+                        <ThemeSwitch />
                         <MobileNav />
                     </div>
                 </div>

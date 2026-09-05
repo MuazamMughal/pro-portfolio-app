@@ -8,7 +8,6 @@ import Header from "@/components/main/Header";
 import PageTransition from "@/components/main/PageTransition";
 import BracketTransition from "@/components/main/BracketTransition"
 import {Toaster} from "react-hot-toast"
-import ThemeSwitch from "@/components/theme-switch";
 
 
 
@@ -64,22 +63,32 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
-  return (
-    
+  const themeInitScript = `
+    (function () {
+      try {
+        var stored = window.localStorage.getItem('theme');
+        var theme = stored === 'light' || stored === 'dark'
+          ? stored
+          : (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+        if (theme === 'dark') document.documentElement.classList.add('dark');
+      } catch (e) {}
+    })();
+  `
 
-<html lang="en">
-         
-      <body className={`${JetBrainsMono.variable} ${anton.variable} ${sacramento.variable} text-black font-bold dark:font-normal bg-white/10  dark:text-white  dark:bg-[#030014]  `}>
+  return (
+    <html lang="en" suppressHydrationWarning>
+      <head>
+        <script dangerouslySetInnerHTML={{ __html: themeInitScript }} />
+      </head>
+      <body className={`${JetBrainsMono.variable} ${anton.variable} ${sacramento.variable} bg-background text-foreground`}>
       <Toaster position="top-center"/>
-      <ThemeSwitch/>
         <Header/>
        <BracketTransition/>
         <PageTransition>
         {children}
-       
+
         </PageTransition>
-       
-        
+
         </body>
     </html>
   );

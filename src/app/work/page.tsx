@@ -17,7 +17,7 @@ const projects = [
     image: "/asset/isSUimg.PNG",
     live: "https://is-startup-app.vercel.app/",
     github: "https://github.com/MuazamMughal/isStartup-app",
-    accent: "from-emerald-400 to-cyan-400",
+    accent: "from-emerald-700 to-cyan-700 dark:from-emerald-400 dark:to-cyan-400",
   },
   {
     num: "02",
@@ -29,7 +29,7 @@ const projects = [
     image: "/asset/ACimg.PNG",
     live: "https://aura-cart-app.vercel.app/",
     github: "https://github.com/MuazamMughal/AuraCart-app",
-    accent: "from-cyan-400 to-blue-400",
+    accent: "from-cyan-700 to-blue-700 dark:from-cyan-400 dark:to-blue-400",
   },
   {
     num: "03",
@@ -40,7 +40,7 @@ const projects = [
     image: "/asset/c-app.png",
     live: "",
     github: "https://github.com/MuazamMughal/cloudary-photos-app",
-    accent: "from-violet-400 to-fuchsia-400",
+    accent: "from-violet-700 to-fuchsia-700 dark:from-violet-400 dark:to-fuchsia-400",
   },
   {
     num: "04",
@@ -51,7 +51,7 @@ const projects = [
     image: "/asset/dmart.png",
     live: "",
     github: "https://github.com/MuazamMughal/hackathon-app",
-    accent: "from-amber-400 to-orange-400",
+    accent: "from-amber-800 to-orange-700 dark:from-amber-400 dark:to-orange-400",
   },
   {
     num: "05",
@@ -62,7 +62,7 @@ const projects = [
     image: "/asset/NL-app.png",
     live: "",
     github: "https://github.com/MuazamMughal/newsland-prototype-app",
-    accent: "from-green-400 to-emerald-400",
+    accent: "from-green-700 to-emerald-700 dark:from-green-400 dark:to-emerald-400",
   },
 ]
 
@@ -76,12 +76,12 @@ const ProjectRow = ({ project, index }: { project: Project; index: number }) => 
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-100px" }}
       transition={{ duration: 0.7, ease: "easeOut" }}
-      className="group relative grid grid-cols-1 items-center gap-0 overflow-hidden rounded-[2rem] border border-white/10 bg-white/[0.02] md:grid-cols-2"
+      className="group relative grid grid-cols-1 items-center gap-0 overflow-hidden rounded-[2rem] border border-border bg-foreground/[0.02] md:grid-cols-2"
     >
       {/* Ghost number */}
       <span
         aria-hidden
-        className="pointer-events-none absolute -top-10 left-4 select-none font-display text-[10rem] leading-none text-white/[0.03] md:text-[13rem]"
+        className="pointer-events-none absolute -top-10 left-4 select-none font-display text-[10rem] leading-none text-foreground/[0.03] md:text-[13rem]"
       >
         {project.num}
       </span>
@@ -99,7 +99,7 @@ const ProjectRow = ({ project, index }: { project: Project; index: number }) => 
           sizes="(min-width: 768px) 50vw, 100vw"
           className="object-cover object-top transition-transform duration-700 ease-out group-hover:scale-[1.06]"
         />
-        <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-[#030014] via-transparent to-transparent md:bg-gradient-to-r" />
+        <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent md:bg-gradient-to-r" />
       </div>
 
       {/* Content */}
@@ -108,20 +108,20 @@ const ProjectRow = ({ project, index }: { project: Project; index: number }) => 
           <span
             className={`h-px w-8 bg-gradient-to-r ${project.accent}`}
           />
-          <p className="text-xs uppercase tracking-[0.2em] text-slate-400">{project.category}</p>
+          <p className="text-xs uppercase tracking-[0.2em] text-muted-foreground">{project.category}</p>
         </div>
 
-        <h3 className="mb-4 text-3xl font-bold tracking-tight text-white sm:text-4xl">
+        <h3 className="mb-4 text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
           {project.title}
         </h3>
 
-        <p className="mb-6 max-w-md text-sm leading-relaxed text-slate-400">{project.description}</p>
+        <p className="mb-6 max-w-md text-sm leading-relaxed text-muted-foreground">{project.description}</p>
 
         <ul className="mb-8 flex flex-wrap gap-2">
           {project.stack.map((tech) => (
             <li
               key={tech}
-              className="rounded-full border border-white/10 bg-white/[0.03] px-3 py-1 text-xs text-slate-300"
+              className="rounded-full border border-border bg-foreground/[0.03] px-3 py-1 text-xs text-foreground/80"
             >
               {tech}
             </li>
@@ -137,14 +137,14 @@ const ProjectRow = ({ project, index }: { project: Project; index: number }) => 
               className={`group/link inline-flex items-center gap-2 bg-gradient-to-r ${project.accent} bg-clip-text text-sm font-semibold text-transparent`}
             >
               <span className="border-b border-transparent group-hover/link:border-current">Visit Live Site</span>
-              <BsArrowUpRight className="text-emerald-400 transition-transform group-hover/link:translate-x-0.5 group-hover/link:-translate-y-0.5" />
+              <BsArrowUpRight className="text-emerald-700 transition-transform group-hover/link:translate-x-0.5 group-hover/link:-translate-y-0.5 dark:text-emerald-400" />
             </Link>
           )}
           <Link
             href={project.github}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 text-sm font-medium text-slate-400 transition-colors hover:text-white"
+            className="inline-flex items-center gap-2 text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
           >
             <BsGithub />
             Source Code
@@ -171,7 +171,7 @@ const WorkPage = () => {
       <motion.main
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        className="relative min-h-screen overflow-hidden bg-[#030014] text-white"
+        className="relative min-h-screen overflow-hidden bg-background text-foreground"
       >
         {/* Ambient background */}
         <div className="pointer-events-none fixed inset-0">
@@ -179,10 +179,10 @@ const WorkPage = () => {
           <div className="absolute top-1/2 right-0 h-96 w-96 rounded-full bg-cyan-500/10 blur-[120px]" />
           <div className="absolute bottom-0 left-1/3 h-96 w-96 rounded-full bg-violet-500/[0.06] blur-[120px]" />
           <div
-            className="absolute inset-0 opacity-[0.03]"
+            className="absolute inset-0 text-foreground opacity-[0.03]"
             style={{
               backgroundImage:
-                "linear-gradient(to right, white 1px, transparent 1px), linear-gradient(to bottom, white 1px, transparent 1px)",
+                "linear-gradient(to right, currentColor 1px, transparent 1px), linear-gradient(to bottom, currentColor 1px, transparent 1px)",
               backgroundSize: "64px 64px",
             }}
           />
@@ -192,15 +192,15 @@ const WorkPage = () => {
           <div className="mb-20 animate-fade-in text-center">
             <div className="mb-5 inline-flex items-center gap-2 rounded-full border border-green-500/30 bg-green-500/10 px-4 py-2 backdrop-blur-sm">
               <span className="h-1.5 w-1.5 rounded-full bg-green-400" />
-              <span className="text-xs font-medium tracking-[0.2em] text-green-400">SELECTED WORK</span>
+              <span className="text-xs font-medium tracking-[0.2em] text-green-600 dark:text-green-400">SELECTED WORK</span>
             </div>
-            <h1 className="mx-auto max-w-2xl text-4xl font-bold tracking-tight text-white sm:text-6xl">
+            <h1 className="mx-auto max-w-2xl text-4xl font-bold tracking-tight text-foreground sm:text-6xl">
               Crafted{" "}
-              <span className="bg-gradient-to-r from-green-400 via-emerald-400 to-cyan-400 bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-green-700 via-emerald-700 to-cyan-700 bg-clip-text text-transparent dark:from-green-400 dark:via-emerald-400 dark:to-cyan-400">
                 Projects
               </span>
             </h1>
-            <p className="mx-auto mt-4 max-w-xl text-slate-400">
+            <p className="mx-auto mt-4 max-w-xl text-muted-foreground">
               A collection of full-stack applications spanning e-commerce, content platforms, and developer tools.
             </p>
           </div>
