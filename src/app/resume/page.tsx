@@ -201,9 +201,7 @@ const ResumePage = () => {
                 <span className="text-xs font-medium tracking-[0.2em] text-green-600 dark:text-green-400">RESUME</span>
               </div>
 
-              <div className="mb-5 flex h-16 w-16 items-center justify-center rounded-2xl border border-green-500/30 bg-gradient-to-br from-green-500/20 to-cyan-500/10 font-primary text-xl font-bold text-green-600 dark:text-green-400">
-                {initials}
-              </div>
+             
 
               <h1 className="mb-1 text-3xl font-bold tracking-tight text-foreground">{personalInfo.name}</h1>
               <p className="mb-6 font-medium text-green-600 dark:text-green-400">{personalInfo.title}</p>
