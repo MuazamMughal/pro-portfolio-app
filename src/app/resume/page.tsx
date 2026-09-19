@@ -16,19 +16,32 @@ import {
 } from 'react-icons/si'
 import { PiBirdBold } from 'react-icons/pi'
 import { ExternalLink, ArrowUpRight, Brain, Cloud } from 'lucide-react'
+import JsonLd from '@/components/seo/JsonLd'
+import { breadcrumbNode, personRef, websiteRef } from '@/lib/jsonld'
+import { siteConfig } from '@/lib/site'
 
 export const metadata: Metadata = {
-  title: 'Resume – Muazam Mughal | Software Engineer',
+  title: 'Resume',
   description:
-    'Full-Stack Developer with 2+ years of experience building web and mobile applications with Laravel, Node.js, Next.js and React Native.',
-  alternates: { canonical: 'https://muazammughal.me/resume' },
+    'Resume of Muazam Mughal, a Full-Stack Developer with 2+ years of experience building web applications with Laravel, Node.js, Next.js, React and Vue.js.',
+  alternates: { canonical: '/resume' },
   openGraph: {
-    title: 'Resume – Muazam Mughal | Software Engineer',
+    title: 'Resume — Muazam Mughal | Full-Stack Developer',
     description:
-      'Full-Stack Developer with 2+ years of experience building web and mobile applications with Laravel, Node.js, Next.js and React Native.',
-    url: 'https://muazammughal.me/resume',
-    type: 'website',
+      'Full-Stack Developer with 2+ years of experience building web applications with Laravel, Node.js, Next.js, React and Vue.js.',
+    url: '/resume',
+    type: 'profile',
   },
+}
+
+const resumePageNode = {
+  "@type": "WebPage",
+  "@id": `${siteConfig.url}/resume#webpage`,
+  url: `${siteConfig.url}/resume`,
+  name: 'Resume — Muazam Mughal',
+  description: metadata.description as string,
+  isPartOf: websiteRef(),
+  about: personRef(),
 }
 
 const personalInfo = {
@@ -176,7 +189,13 @@ const ResumePage = () => {
     .join('')
 
   return (
-    <main className="relative min-h-screen bg-background text-foreground">
+    <main id="main-content" className="relative min-h-screen bg-background text-foreground">
+      <JsonLd
+        nodes={[
+          resumePageNode,
+          breadcrumbNode([{ name: 'Home', path: '/' }, { name: 'Resume', path: '/resume' }]),
+        ]}
+      />
       {/* Ambient background */}
       <div className="pointer-events-none fixed inset-0">
         <div className="absolute -top-32 left-1/4 h-72 w-72 rounded-full bg-green-500/10 blur-[100px]" />

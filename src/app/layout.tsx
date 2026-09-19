@@ -8,6 +8,9 @@ import Header from "@/components/main/Header";
 import PageTransition from "@/components/main/PageTransition";
 import BracketTransition from "@/components/main/BracketTransition"
 import {Toaster} from "react-hot-toast"
+import { siteConfig } from "@/lib/site"
+import { personNode, websiteNode } from "@/lib/jsonld"
+import JsonLd from "@/components/seo/JsonLd"
 
 
 
@@ -29,34 +32,31 @@ const sacramento = Sacramento({
   variable: "--font-signature",
 })
 export const metadata: Metadata = {
-  title: 'Muazam Mughal | Full-Stack Engineer (Next.js, AI, Cloud)',
-  description: 'Full-stack developer & AI engineer specializing in Next.js, generative AI, and cloud-native apps. Let\'s build the future.',
-  icons: "/NewAvatar.png",
+  metadataBase: new URL(siteConfig.url),
+  title: {
+    default: siteConfig.title,
+    template: `%s | ${siteConfig.name}`,
+  },
+  description: siteConfig.description,
   alternates: {
-    canonical: 'https://muazammughal.me',
+    canonical: '/',
   },
   openGraph: {
-    title: 'Muazam Mughal | Next.js & AI Engineer',
-    description: 'I build performant web apps and AI solutions. Hire me for your project!',
-    url: 'https://muazammughal.me',
+    title: siteConfig.title,
+    description: siteConfig.description,
+    url: '/',
     type: 'website',
-    images: [
-      {
-        url: '/social-preview.jpg', // Replace with your OpenGraph image
-        width: 1200,
-        height: 630,
-        alt: 'Muazam Mughal - Full-Stack Engineer',
-      }
-    ],
-    siteName: 'Muazam Mughal',
+    siteName: siteConfig.name,
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Muazam Mughal | Next.js & AI Engineer',
-    description: 'I build performant web apps and AI solutions. Hire me for your project!',
-    images: ['/social-preview.jpg'], // Same as OpenGraph image
+    title: siteConfig.title,
+    description: siteConfig.description,
   },
-  metadataBase: new URL('https://muazammughal.me'),
+  robots: {
+    index: true,
+    follow: true,
+  },
 };
 export default function RootLayout({
   children,
@@ -79,8 +79,15 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <head>
         <script dangerouslySetInnerHTML={{ __html: themeInitScript }} />
+        <JsonLd nodes={[personNode(), websiteNode()]} />
       </head>
       <body className={`${JetBrainsMono.variable} ${anton.variable} ${sacramento.variable} bg-background text-foreground`}>
+      <a
+        href="#main-content"
+        className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[100] focus:rounded-full focus:bg-green-500 focus:px-4 focus:py-2 focus:text-sm focus:font-medium focus:text-white"
+      >
+        Skip to content
+      </a>
       <Toaster position="top-center"/>
         <Header/>
        <BracketTransition/>

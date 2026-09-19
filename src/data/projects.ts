@@ -1,0 +1,73 @@
+export const projects = [
+  {
+    num: "01",
+    category: "Full-Stack Development",
+    title: "Trust Real Estate",
+    description:
+      "A sleek real estate marketing website for a construction and investment firm, showcasing premium properties with an elegant dark-themed UI, powered by Sanity as a headless CMS.",
+    stack: ["Next.js", "React", "Sanity", "TailwindCSS", "TypeScript"],
+    image: "/asset/RE-app.png",
+    live: "https://real-estate-app-five-kappa.vercel.app/",
+    github: "https://github.com/MuazamMughal/realEstate-app",
+    accent: "from-yellow-700 to-amber-700 dark:from-yellow-400 dark:to-amber-400",
+  },
+  {
+    num: "02",
+    category: "Full-Stack Development",
+    title: "isStartup",
+    description:
+      "A Next.js 15 and Sanity-powered platform for entrepreneurs to submit, browse, and showcase startup ideas in virtual pitch competitions.",
+    stack: ["Next.js 15", "React 19", "Sanity", "NextAuth", "TypeScript", "TailwindCSS", "Shadcn UI"],
+    image: "/asset/isSUimg.PNG",
+    live: "https://is-startup-app.vercel.app/",
+    github: "https://github.com/MuazamMughal/isStartup-app",
+    accent: "from-emerald-700 to-cyan-700 dark:from-emerald-400 dark:to-cyan-400",
+  },
+  {
+    num: "03",
+    category: "Full-Stack Development",
+    title: "AuraCart",
+    description:
+      "A modern e-commerce platform built with Next.js, Clerk, Sanity, Stripe, and PostgreSQL — secure authentication, real-time data, and smooth checkout.",
+    stack: ["Next.js 15", "React 19", "Sanity", "Stripe", "Clerk", "TypeScript", "TailwindCSS"],
+    image: "/asset/ACimg.PNG",
+    live: "https://aura-cart-app.vercel.app/",
+    github: "https://github.com/MuazamMughal/AuraCart-app",
+    accent: "from-cyan-700 to-blue-700 dark:from-cyan-400 dark:to-blue-400",
+  },
+  {
+    num: "04",
+    category: "Full-Stack Development",
+    title: "Photo Gallery",
+    description: "A fully-enhanced photo gallery in Next.js with a Cloudinary-powered backend.",
+    stack: ["Next.js", "React", "TypeScript", "Cloudinary", "Context API"],
+    image: "/asset/c-app.png",
+    live: "",
+    github: "https://github.com/MuazamMughal/cloudary-photos-app",
+    accent: "from-violet-700 to-fuchsia-700 dark:from-violet-400 dark:to-fuchsia-400",
+  },
+  {
+    num: "05",
+    category: "Full-Stack Development",
+    title: "Dine Market",
+    description: "E-commerce marketplace with an elegant UI and full-fledged functionality, Sanity as CMS.",
+    stack: ["Next.js", "TailwindCSS", "React", "Sanity", "TypeScript", "Redux TK"],
+    image: "/asset/dmart.png",
+    live: "",
+    github: "https://github.com/MuazamMughal/hackathon-app",
+    accent: "from-amber-800 to-orange-700 dark:from-amber-400 dark:to-orange-400",
+  },
+  {
+    num: "06",
+    category: "Full-Stack Development",
+    title: "NewsLand",
+    description: "Multilingual news website in English and Urdu, built with Next.js and Strapi as the backend.",
+    stack: ["Next.js", "TailwindCSS", "React", "TypeScript", "Strapi"],
+    image: "/asset/NL-app.png",
+    live: "",
+    github: "https://github.com/MuazamMughal/newsland-prototype-app",
+    accent: "from-green-700 to-emerald-700 dark:from-green-400 dark:to-emerald-400",
+  },
+]
+
+export type Project = (typeof projects)[number]
