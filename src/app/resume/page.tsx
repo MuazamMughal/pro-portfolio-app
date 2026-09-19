@@ -33,7 +33,7 @@ export const metadata: Metadata = {
 
 const personalInfo = {
   name: 'Muazam Mughal',
-  title: 'Full-Stack Developer',
+  title: 'Software Engineer',
   location: 'Sahiwal, Pakistan',
   email: 'eng.muazam@gmail.com',
   phone: '+92 303 4510773',

@@ -10,6 +10,18 @@ const projects = [
   {
     num: "01",
     category: "Full-Stack Development",
+    title: "Trust Real Estate",
+    description:
+      "A sleek real estate marketing website for a construction and investment firm, showcasing premium properties with an elegant dark-themed UI, powered by Sanity as a headless CMS.",
+    stack: ["Next.js", "React", "Sanity", "TailwindCSS", "TypeScript"],
+    image: "/asset/RE-app.png",
+    live: "https://real-estate-app-five-kappa.vercel.app/",
+    github: "https://github.com/MuazamMughal/realEstate-app",
+    accent: "from-yellow-700 to-amber-700 dark:from-yellow-400 dark:to-amber-400",
+  },
+  {
+    num: "02",
+    category: "Full-Stack Development",
     title: "isStartup",
     description:
       "A Next.js 15 and Sanity-powered platform for entrepreneurs to submit, browse, and showcase startup ideas in virtual pitch competitions.",
@@ -20,7 +32,7 @@ const projects = [
     accent: "from-emerald-700 to-cyan-700 dark:from-emerald-400 dark:to-cyan-400",
   },
   {
-    num: "02",
+    num: "03",
     category: "Full-Stack Development",
     title: "AuraCart",
     description:
@@ -32,7 +44,7 @@ const projects = [
     accent: "from-cyan-700 to-blue-700 dark:from-cyan-400 dark:to-blue-400",
   },
   {
-    num: "03",
+    num: "04",
     category: "Full-Stack Development",
     title: "Photo Gallery",
     description: "A fully-enhanced photo gallery in Next.js with a Cloudinary-powered backend.",
@@ -43,7 +55,7 @@ const projects = [
     accent: "from-violet-700 to-fuchsia-700 dark:from-violet-400 dark:to-fuchsia-400",
   },
   {
-    num: "04",
+    num: "05",
     category: "Full-Stack Development",
     title: "Dine Market",
     description: "E-commerce marketplace with an elegant UI and full-fledged functionality, Sanity as CMS.",
@@ -54,7 +66,7 @@ const projects = [
     accent: "from-amber-800 to-orange-700 dark:from-amber-400 dark:to-orange-400",
   },
   {
-    num: "05",
+    num: "06",
     category: "Full-Stack Development",
     title: "NewsLand",
     description: "Multilingual news website in English and Urdu, built with Next.js and Strapi as the backend.",
