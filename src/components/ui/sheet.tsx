@@ -52,14 +52,17 @@ const sheetVariants = cva(
 
 interface SheetContentProps
   extends React.ComponentPropsWithoutRef<typeof SheetPrimitive.Content>,
-    VariantProps<typeof sheetVariants> {}
+    VariantProps<typeof sheetVariants> {
+  overlayClassName?: string
+  hideCloseButton?: boolean
+}
 
 const SheetContent = React.forwardRef<
   React.ElementRef<typeof SheetPrimitive.Content>,
   SheetContentProps
->(({ side = "right", className, children, ...props }, ref) => (
+>(({ side = "right", className, children, overlayClassName, hideCloseButton = false, ...props }, ref) => (
   <SheetPortal>
-    <SheetOverlay />
+    <SheetOverlay className={overlayClassName} />
     <SheetPrimitive.Content
       ref={ref}
       className={cn(sheetVariants({ side }), className)}
@@ -68,10 +71,10 @@ const SheetContent = React.forwardRef<
       <SheetPrimitive.Title className="sr-only">Navigation menu</SheetPrimitive.Title>
       <SheetPrimitive.Description className="sr-only">Site navigation links</SheetPrimitive.Description>
       {children}
-      <SheetPrimitive.Close className="  hover:opacity-50 border-green-800 absolute right-8 top-8 rounded-sm outline-none focus-visible:ring-2 focus-visible:ring-green-500 focus-visible:ring-offset-2 focus-visible:ring-offset-background">
+      {!hideCloseButton && <SheetPrimitive.Close className="  hover:opacity-50 border-green-800 absolute right-8 top-8 rounded-sm outline-none focus-visible:ring-2 focus-visible:ring-green-500 focus-visible:ring-offset-2 focus-visible:ring-offset-background">
         <GiAxeSword className="h-7 w-12  text-green-300" />
         <span className="sr-only">Close</span>
-      </SheetPrimitive.Close>
+      </SheetPrimitive.Close>}
     </SheetPrimitive.Content>
   </SheetPortal>
 ))

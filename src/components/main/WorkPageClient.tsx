@@ -33,7 +33,7 @@ const ProjectRow = ({ project, index }: { project: Project; index: number }) => 
       >
         <Image
           src={project.image}
-          alt={`${project.title} — screenshot of the ${project.category.toLowerCase()} project`}
+          alt={project.imageAlt ?? `${project.title} — screenshot of the ${project.category.toLowerCase()} project`}
           fill
           sizes="(min-width: 768px) 50vw, 100vw"
           className="object-cover object-top transition-transform duration-700 ease-out group-hover:scale-[1.06]"
