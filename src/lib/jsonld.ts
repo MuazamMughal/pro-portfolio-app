@@ -4,42 +4,75 @@ import { projects, type Project } from "@/data/projects"
 export const PERSON_ID = `${siteConfig.url}/#person`
 export const WEBSITE_ID = `${siteConfig.url}/#website`
 
+export const IMAGE_ID = `${siteConfig.url}/#primaryimage`
+
+/** Portrait used as the entity image — referenced by Person and ProfilePage. */
+export const primaryImageNode = () => ({
+  "@type": "ImageObject",
+  "@id": IMAGE_ID,
+  url: `${siteConfig.url}/NewAvatar.png`,
+  contentUrl: `${siteConfig.url}/NewAvatar.png`,
+  width: 1024,
+  height: 1024,
+  caption: `${siteConfig.name}, ${siteConfig.jobTitle}`,
+})
+
 /** Full Person entity — define this ONCE (root layout) and reference elsewhere via personRef(). */
 export const personNode = () => ({
   "@type": "Person",
   "@id": PERSON_ID,
   name: siteConfig.name,
+  givenName: "Muazam",
+  familyName: "Mughal",
+  alternateName: ["Muazam Mughal Developer", "Eng. Muazam"],
   url: siteConfig.url,
-  image: `${siteConfig.url}/NewAvatar.png`,
+  mainEntityOfPage: { "@id": `${siteConfig.url}/#webpage` },
+  image: { "@id": IMAGE_ID },
   jobTitle: siteConfig.jobTitle,
   description: siteConfig.description,
-  email: `mailto:${siteConfig.email}`,
-  telephone: "+92-303-4510773",
+  email: siteConfig.email,
+  telephone: siteConfig.phone,
   address: {
     "@type": "PostalAddress",
     addressLocality: siteConfig.location.locality,
     addressRegion: siteConfig.location.region,
-    addressCountry: siteConfig.location.country,
+    addressCountry: "PK",
+  },
+  homeLocation: {
+    "@type": "Place",
+    name: `${siteConfig.location.locality}, ${siteConfig.location.region}, Pakistan`,
   },
   worksFor: {
     "@type": "Organization",
     name: "AlphaSoft360",
   },
+  hasOccupation: {
+    "@type": "Occupation",
+    name: siteConfig.jobTitle,
+    description:
+      "Designs and builds web and mobile applications, RESTful APIs and secure backend systems with Laravel, Node.js, Next.js and Vue.js.",
+    occupationLocation: { "@type": "Country", name: "Pakistan" },
+    skills: siteConfig.skills.join(", "),
+  },
   alumniOf: [
-    { "@type": "EducationalOrganization", name: "Virtual University of Pakistan" },
+    {
+      "@type": "CollegeOrUniversity",
+      name: "Virtual University of Pakistan",
+      url: "https://www.vu.edu.pk",
+    },
     { "@type": "EducationalOrganization", name: "PIAIC" },
   ],
-  knowsAbout: [
-    "Laravel",
-    "Node.js",
-    "Next.js",
-    "React",
-    "Vue.js",
-    "TypeScript",
-    "PostgreSQL",
-    "MySQL",
-    "REST APIs",
-  ],
+  hasCredential: {
+    "@type": "EducationalOccupationalCredential",
+    name: "BS Software Engineering",
+    credentialCategory: "degree",
+    recognizedBy: {
+      "@type": "CollegeOrUniversity",
+      name: "Virtual University of Pakistan",
+    },
+  },
+  knowsAbout: siteConfig.skills,
+  knowsLanguage: ["English", "Urdu"],
   sameAs: [siteConfig.links.github, siteConfig.links.linkedin],
 })
 
@@ -50,6 +83,7 @@ export const websiteNode = () => ({
   name: siteConfig.name,
   url: siteConfig.url,
   description: siteConfig.description,
+  inLanguage: "en",
   publisher: { "@id": PERSON_ID },
   author: { "@id": PERSON_ID },
 })

@@ -1,0 +1,14 @@
+# Muazam Mughal
+
+> Muazam Mughal is a Full-Stack Developer based in Sahiwal, Punjab, Pakistan, with 2+ years of experience building web and mobile applications with Laravel, Node.js, Next.js, React, Vue.js and React Native. He is a Software Engineer at AlphaSoft360 and holds a BS in Software Engineering from the Virtual University of Pakistan.
+
+- Website: https://muazam-mughal.vercel.app
+- GitHub: https://github.com/MuazamMughal
+- LinkedIn: https://www.linkedin.com/in/muazam-mughal/
+- Email: eng.muazam@gmail.com
+
+## Pages
+- [Home](https://muazam-mughal.vercel.app/): Overview and core technologies
+- [Projects](https://muazam-mughal.vercel.app/work): Production projects with live links and source code
+- [Resume](https://muazam-mughal.vercel.app/resume): Work experience, skills and education
+- [Contact](https://muazam-mughal.vercel.app/contact): Hire or contact Muazam Mughal

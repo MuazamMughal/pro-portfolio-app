@@ -3,6 +3,7 @@ import { siteConfig } from "@/lib/site"
 
 export const size = { width: 1200, height: 630 }
 export const contentType = "image/png"
+export const alt = `${siteConfig.name} — ${siteConfig.jobTitle} (Laravel, Node.js, Next.js)`
 
 export default function OGImage() {
   return new ImageResponse(
