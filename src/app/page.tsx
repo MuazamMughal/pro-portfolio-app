@@ -12,7 +12,7 @@ const profilePageNode = {
   name: siteConfig.title,
   description: siteConfig.description,
   inLanguage: "en",
-  dateModified: "2026-10-16",
+  dateModified: "2026-10-23",
   isPartOf: websiteRef(),
   about: personRef(),
   mainEntity: personRef(),

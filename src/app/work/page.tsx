@@ -5,7 +5,7 @@ import { breadcrumbNode, personRef, websiteRef, projectsItemListNode, PROJECTS_L
 import { siteConfig } from "@/lib/site"
 
 export const metadata: Metadata = {
-  title: "Projects",
+  title: "Full-Stack Web & Mobile Projects",
   description:
     "Full-stack projects by Muazam Mughal built with Next.js, React, Sanity, Laravel and Node.js — including e-commerce, real estate, and content platforms.",
   alternates: { canonical: "/work" },
@@ -15,6 +15,21 @@ export const metadata: Metadata = {
       "Full-stack projects by Muazam Mughal built with Next.js, React, Sanity, Laravel and Node.js — including e-commerce, real estate, and content platforms.",
     url: "/work",
     type: "website",
+    images: [
+      {
+        url: "/opengraph-image",
+        width: 1200,
+        height: 630,
+        alt: "Projects — Muazam Mughal | Full-Stack Developer",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Projects — Muazam Mughal | Full-Stack Developer",
+    description:
+      "Full-stack projects by Muazam Mughal built with Next.js, React, Sanity, Laravel and Node.js.",
+    images: ["/opengraph-image"],
   },
 }
 

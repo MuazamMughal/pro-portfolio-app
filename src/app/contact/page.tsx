@@ -5,7 +5,7 @@ import { breadcrumbNode, personRef, websiteRef } from "@/lib/jsonld"
 import { siteConfig } from "@/lib/site"
 
 export const metadata: Metadata = {
-  title: "Contact",
+  title: "Contact & Hire",
   description:
     "Get in touch with Muazam Mughal, a Full-Stack Developer based in Sahiwal, Pakistan, for web development projects, collaboration, or consulting.",
   alternates: { canonical: "/contact" },
@@ -15,6 +15,21 @@ export const metadata: Metadata = {
       "Get in touch with Muazam Mughal for web development projects, collaboration, or consulting.",
     url: "/contact",
     type: "website",
+    images: [
+      {
+        url: "/opengraph-image",
+        width: 1200,
+        height: 630,
+        alt: "Contact — Muazam Mughal | Full-Stack Developer",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Contact — Muazam Mughal | Full-Stack Developer",
+    description:
+      "Get in touch with Muazam Mughal for web development projects, collaboration, or consulting.",
+    images: ["/opengraph-image"],
   },
 }
 

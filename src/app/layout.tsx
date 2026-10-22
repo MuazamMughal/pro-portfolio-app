@@ -61,7 +61,8 @@ export const metadata: Metadata = {
     description: siteConfig.description,
   },
   icons: {
-    icon: '/icon',
+    icon: '/NewAvatar.png',
+    shortcut: '/NewAvatar.png',
     apple: '/NewAvatar.png',
   },
   formatDetection: { email: false, address: false, telephone: false },
